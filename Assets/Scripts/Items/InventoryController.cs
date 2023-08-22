@@ -5,11 +5,9 @@
 
 	public class InventoryController : MonoBehaviour
 	{
-		[SerializeField] private List<Item> items;
-		[SerializeField] private int money;
+		[field: SerializeField] public List<Item> Items { get; private set; }
+		[field: SerializeField] public int Money { get; private set; }
 
-		public int Money => money;
-		public int ItemsCount => items.Count;
 
 		public void SellAllItemsUpToValue(int maxValue)
 		{
@@ -26,7 +24,7 @@
 
 		public void AddItem(Item item)
 		{
-			items.Add(item);
+			Items.Add(item);
 		}
 	}
 }
