@@ -11,17 +11,15 @@ namespace AFSInterview
 	[RequireComponent(typeof(TMP_Text))]
 	public class InventoryUI : MonoBehaviour
 	{
-		[field: SerializeField, FormerlySerializedAs("inventory")]
-		public InventoryController Controller { get; private set; }
-
-		[field: SerializeField, FormerlySerializedAs("currency")]
-		public string CurrencyPostfix { get; private set; }
+		[SerializeField] private InventoryController inventory;
+		[SerializeField] private string currency;
 
 		private void Awake()
 		{
-			if (Controller != null)
+			if (inventory != null)
 			{
-				Controller.OnInventoryChanged += UpdateText;
+				inventory.OnMoneyChanged += UpdateText;
+				inventory.OnItemsChanged += UpdateText;
 				UpdateText();
 			}
 		}
@@ -29,11 +27,11 @@ namespace AFSInterview
 		private void UpdateText()
 		{
 			StringBuilder sb = new();
-			sb.AppendLine($"{Controller.Money}{CurrencyPostfix}");
+			sb.AppendLine($"{inventory.Money}{currency}");
 			sb.AppendLine();
-			sb.AppendLine($"{nameof(Controller.Items)}");
-			foreach (var item in Controller.Items)
-				sb.AppendLine($"- {item.Name} ({item.Value}{CurrencyPostfix})");
+			sb.AppendLine($"{nameof(inventory.Items)}");
+			foreach (var item in inventory.Items)
+				sb.AppendLine($"- {item.Name} ({item.Value}{currency})");
 
 			GetComponent<TMP_Text>().text = sb.ToString();
 		}

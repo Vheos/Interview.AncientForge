@@ -9,22 +9,21 @@
 	[Serializable]
 	public class Item
 	{
-		[field: SerializeField, FormerlySerializedAs("name")]
-		public string Name { get; private set; }
+		[SerializeField] private string name;
+		[SerializeField] private int value;
+		[SerializeField] private ItemEffect[] useEffects;
 
-		[field: SerializeField, FormerlySerializedAs("value")]
-		public int Value { get; private set; }
-
-		[field: SerializeField, FormerlySerializedAs("useEffects")]
-		public ItemEffect[] UseEffects { get; private set; }
+		public string Name => name;
+		public int Value => value;
+		public IReadOnlyList<ItemEffect> UseEffects => useEffects;
 
 		public Item(string name, int value)
 		{
-			Name = name;
-			Value = value;
-			UseEffects = Array.Empty<ItemEffect>();
+			this.name = name;
+			this.value = value;
+			useEffects = Array.Empty<ItemEffect>();
 		}
 
-		public bool IsUsable => UseEffects.Any(effect => effect.Script != null);
+		public bool IsUsable => useEffects.Any(effect => effect.Script != null);
 	}
 }

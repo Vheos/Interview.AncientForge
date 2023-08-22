@@ -10,6 +10,6 @@ namespace AFSInterview
 	public class ChangeMoney : ItemEffectScript
 	{
 		public override void Invoke(InventoryController inventory, Item item, string[] values)
-			=> inventory.ChangeMoney(int.Parse(values[0]));
+			=> inventory.Money += int.Parse(values[0]);
 	}
 }

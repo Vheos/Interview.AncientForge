@@ -5,29 +5,65 @@
 	using System.Linq;
 	using UnityEngine;
 	using UnityEngine.Serialization;
+	using Vheos.Helpers;
+	using Vheos.Helpers.Collections;
+	using Vheos.Helpers.Math;
 
 	public class InventoryController : MonoBehaviour
 	{
-		[field: SerializeField, FormerlySerializedAs("items")]
-		public List<Item> Items { get; private set; }
+		[SerializeField] private int money;
+		[SerializeField] private List<Item> items;
 
-		[field: SerializeField, FormerlySerializedAs("money")]
-		public int Money { get; private set; }
+		public int Money
+		{
+			get => money;
+			set
+			{
+				int previous = money;
+				money = value.ClampMin(0);
+				if (money != previous)
+					OnMoneyChanged();
+			}
+		}
+		public IReadOnlyList<Item> Items => items;
 
-		public event Action OnInventoryChanged = delegate { };
+		public event Action OnMoneyChanged = delegate { };
+		public event Action OnItemsChanged = delegate { };
 
 		public void SellAllItemsUpToValue(int maxValueIncl)
 		{
-			Item[] filteredItems = Items.Where(item => item.Value <= maxValueIncl).ToArray();
+			Item[] filteredItems = items.Where(item => item.Value <= maxValueIncl).ToArray();
 			if (filteredItems.Length == 0)
 				return;
 
-			foreach (var item in filteredItems)
-			{
-				Money += item.Value;
-				Items.Remove(item);
-			}
-			OnInventoryChanged();
+			int totalValue = filteredItems.Sum(item => item.Value);
+			Debug.Log($"Sold {filteredItems.Length} items for a total value of {totalValue}");
+			Money += totalValue;
+			RemoveItems(filteredItems);
+		}
+
+		public void AddItem(Item item)
+		{
+			if (items.TryAddUnique(item))
+				OnItemsChanged();
+		}
+
+		public void AddItems(IEnumerable<Item> items)
+		{
+			if (this.items.TryAddUnique(items))
+				OnItemsChanged();
+		}
+
+		public void RemoveItem(Item item)
+		{
+			if (items.TryRemove(item))
+				OnItemsChanged();
+		}
+
+		public void RemoveItems(IEnumerable<Item> items)
+		{
+			if (this.items.TryRemove(items))
+				OnItemsChanged();
 		}
 
 		public bool UseItem(Item item)
@@ -42,30 +78,6 @@
 		}
 
 		public bool UseFirstUsableItem()
-		=> UseItem(Items.FirstOrDefault(item => item.IsUsable));
-
-		public void AddItem(Item item)
-		{
-			Items.Add(item);
-			OnInventoryChanged();
-		}
-
-		public void RemoveItem(Item item)
-		{
-			if (Items.Remove(item))
-				OnInventoryChanged();
-		}
-
-		public void ChangeMoney(int change)
-		{
-			int previousValue = Money;
-
-			Money += change;
-			if (Money < 0)
-				Money = 0;
-
-			if (Money != previousValue)
-				OnInventoryChanged();
-		}
+			=> UseItem(items.FirstOrDefault(item => item.IsUsable));
 	}
 }
