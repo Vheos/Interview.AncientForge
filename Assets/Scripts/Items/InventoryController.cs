@@ -8,6 +8,7 @@
 		[field: SerializeField] public List<Item> Items { get; private set; }
 		[field: SerializeField] public int Money { get; private set; }
 
+		public event Action OnItemsChanged = delegate { };
 
 		public void SellAllItemsUpToValue(int maxValue)
 		{
@@ -25,6 +26,7 @@
 		public void AddItem(Item item)
 		{
 			Items.Add(item);
+			OnItemsChanged();
 		}
 	}
 }
