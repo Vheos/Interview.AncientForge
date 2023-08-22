@@ -5,20 +5,20 @@ Email us at work@ancientforgestudio.com with the repository link and a report of
 
 ## Part 0:
 - [x] get a public git repository for this task and commit your changes as you go. We'd like to see your repository work ethic in action.
+  > - I wouldn't imagine it any other way ;)
 
 ## Part 1:
 - [x] Find a bug in the code logic and fix it
-  - _the bug was caused by removing elements from the list while still iterating over. I fixed it by iterating over a COPY of the list. Another solution is to make a sublist of to-be-removed elements in one loop, then remove them in another loop._
+  > - _the bug was caused by removing elements from the list while still iterating over. I fixed it by iterating over a COPY of the list. Another solution is to make a sublist of to-be-removed elements in one loop, then remove them in another loop._
 - [x] Optimize the ItemsManager class code
-  - _`ItemManager` was calling `FindObjectOfType<T>()` in its `Update()` to print the inventory. Not only is this bad approach (as it assumes the component you're looking for is the only/first one in the scene), but it's also very inefficient. `Find` methods should never be used in production code, let alone in `Update()`_
-  - _the rest of `ItemManager` could use some refactoring, but nothing else seemed to be out-of-place performance-wise._
+  > - `ItemManager` was calling `FindObjectOfType<T>()` in its `Update()` to print the inventory. Not only is this bad approach (as it assumes the component you're looking for is the only/first one in the scene), but it's also very inefficient. `Find` methods should never be used in production code, let alone in `Update()`
+  > - the rest of `ItemManager` could use some refactoring, but nothing else seemed to be out-of-place performance-wise.
 - [x] Extend the whole system by introducing a concept of a consumable item, that upon using, will either add money or a different item to the inventory.
-  - _I implemented a simple inspector-friendly (SO-driven) system for specifying the effects of a usable item:_
-  - _each item has a list of `ItemEffects` which will be trigger when the item gets used. It consists of:_
-    - _`ItemEffectScript` - SO that defines the logic of the effect_
-    - _`string` - semicolon-separated list of values that will get parsed contextually by the above script_
-  - _there is an example item (called `Treasure Chest`, with a sphere mesh) that makes use of the system:_
-    - _when it's used, it gives you 500$ and a `Cursed Coin` item which sells for -666$_
+  > - I implemented a simple inspector-friendly (SO-driven) system for specifying the effects of a usable item:
+  > - each item has a list of `ItemEffects` which will be trigger when the item gets used. It consists of:
+  >   - `ItemEffectScript` - SO that defines the logic of the effect
+  >   - `string` - semicolon-separated list of values that will get parsed contextually by the above script
+  > - there is an example item (called `Treasure Chest`, with a sphere mesh) that makes use of the system. When it's used, it gives you 500$ and a `Cursed Coin` item which sells for -666$.
 
 ## Part 2:
 - [ ] Implement a system that will be used to execute fights between certain army units.
