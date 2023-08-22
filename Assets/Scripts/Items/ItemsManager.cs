@@ -1,7 +1,10 @@
 ﻿namespace AFSInterview.Items
 {
-	using TMPro;
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
 	using UnityEngine;
+	using Random = UnityEngine.Random;
 
 	public class ItemsManager : MonoBehaviour
 	{

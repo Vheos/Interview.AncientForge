@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afe0d024819b6f7439d5721721edc90b, type: 3}
-  m_Name: ChangeMoney
+  m_Name: AddMoney
   m_EditorClassIdentifier: 
   <Amount>k__BackingField: 0

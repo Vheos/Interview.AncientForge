@@ -1,13 +1,12 @@
-namespace AFSInterview
+namespace AFSInterview.Items.Effects
 {
-	using AFSInterview.Items;
-	using System.Collections;
+	using System;
 	using System.Collections.Generic;
+	using System.Linq;
 	using UnityEngine;
-	using UnityEngine.Serialization;
 
 	[CreateAssetMenu(fileName = nameof(AddItem), menuName = ASSET_MENU_PATH + nameof(AddItem))]
-	public class AddItem : ItemEffectScript
+	public class AddItem : AItemEffectScript
 	{
 		public override void Invoke(InventoryController inventory, Item _, string[] values)
 		{

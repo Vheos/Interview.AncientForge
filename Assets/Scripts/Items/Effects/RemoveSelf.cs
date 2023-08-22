@@ -1,13 +1,12 @@
-namespace AFSInterview
+namespace AFSInterview.Items.Effects
 {
-	using AFSInterview.Items;
-	using System.Collections;
+	using System;
 	using System.Collections.Generic;
+	using System.Linq;
 	using UnityEngine;
-	using UnityEngine.Serialization;
 
 	[CreateAssetMenu(fileName = nameof(RemoveSelf), menuName = ASSET_MENU_PATH + nameof(RemoveSelf))]
-	public class RemoveSelf : ItemEffectScript
+	public class RemoveSelf : AItemEffectScript
 	{
 		public override void Invoke(InventoryController inventory, Item item, string[] _)
 			=> inventory.RemoveItem(item);

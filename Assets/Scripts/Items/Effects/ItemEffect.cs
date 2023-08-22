@@ -1,15 +1,14 @@
-namespace AFSInterview
+namespace AFSInterview.Items.Effects
 {
-	using AFSInterview.Items;
 	using System;
-	using System.Collections;
 	using System.Collections.Generic;
+	using System.Linq;
 	using UnityEngine;
 
 	[Serializable]
 	public struct ItemEffect
 	{
-		public ItemEffectScript Script;
+		public AItemEffectScript Script;
 		public string Data;
 
 		public void Invoke(InventoryController inventory, Item item)

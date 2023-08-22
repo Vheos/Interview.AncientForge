@@ -1,12 +1,12 @@
 namespace AFSInterview
 {
 	using AFSInterview.Items;
-	using System.Collections;
+	using System;
 	using System.Collections.Generic;
+	using System.Linq;
 	using System.Text;
 	using TMPro;
 	using UnityEngine;
-	using UnityEngine.Serialization;
 
 	[RequireComponent(typeof(TMP_Text))]
 	public class InventoryUI : MonoBehaviour
