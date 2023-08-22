@@ -18,9 +18,5 @@
 			this.value = value;
 		}
 
-		public void Use()
-		{
-			Debug.Log("Using" + Name);
-		}
 	}
 }

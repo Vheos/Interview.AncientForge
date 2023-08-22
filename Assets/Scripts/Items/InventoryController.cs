@@ -29,6 +29,20 @@
 			OnInventoryChanged();
 		}
 
+		public bool UseItem(Item item)
+		{
+			if (item == null || !item.IsUsable)
+				return false;
+
+			foreach (var effect in item.UseEffects)
+				effect.Invoke(this, item);
+
+			return true;
+		}
+
+		public bool UseFirstUsableItem()
+		=> UseItem(Items.FirstOrDefault(item => item.IsUsable));
+
 		public void AddItem(Item item)
 		{
 			Items.Add(item);
