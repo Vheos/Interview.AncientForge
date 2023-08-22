@@ -6,12 +6,16 @@ namespace AFSInterview
 	using System.Text;
 	using TMPro;
 	using UnityEngine;
+	using UnityEngine.Serialization;
 
 	[RequireComponent(typeof(TMP_Text))]
 	public class InventoryUI : MonoBehaviour
 	{
-		[field: SerializeField] public InventoryController Controller { get; private set; }
-		[field: SerializeField] public string CurrencyPostfix { get; private set; }
+		[field: SerializeField, FormerlySerializedAs("inventory")]
+		public InventoryController Controller { get; private set; }
+
+		[field: SerializeField, FormerlySerializedAs("currency")]
+		public string CurrencyPostfix { get; private set; }
 
 		private void Awake()
 		{

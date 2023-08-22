@@ -6,11 +6,11 @@
 	[Serializable]
 	public class Item
 	{
-		[SerializeField] private string name;
-		[SerializeField] private int value;
+		[field: SerializeField, FormerlySerializedAs("name")]
+		public string Name { get; private set; }
 
-		public string Name => name;
-		public int Value => value;
+		[field: SerializeField, FormerlySerializedAs("value")]
+		public int Value { get; private set; }
 
 		public Item(string name, int value)
 		{

@@ -7,8 +7,11 @@
 
 	public class InventoryController : MonoBehaviour
 	{
-		[field: SerializeField] public List<Item> Items { get; private set; }
-		[field: SerializeField] public int Money { get; private set; }
+		[field: SerializeField, FormerlySerializedAs("items")]
+		public List<Item> Items { get; private set; }
+
+		[field: SerializeField, FormerlySerializedAs("money")]
+		public int Money { get; private set; }
 
 		public event Action OnInventoryChanged = delegate { };
 
