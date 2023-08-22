@@ -10,7 +10,7 @@
 		[field: SerializeField] public List<Item> Items { get; private set; }
 		[field: SerializeField] public int Money { get; private set; }
 
-		public event Action OnItemsChanged = delegate { };
+		public event Action OnInventoryChanged = delegate { };
 
 		public void SellAllItemsUpToValue(int maxValueIncl)
 		{
@@ -23,13 +23,13 @@
 				Money += item.Value;
 				Items.Remove(item);
 			}
-			OnItemsChanged();
+			OnInventoryChanged();
 		}
 
 		public void AddItem(Item item)
 		{
 			Items.Add(item);
-			OnItemsChanged();
+			OnInventoryChanged();
 		}
 	}
 }
