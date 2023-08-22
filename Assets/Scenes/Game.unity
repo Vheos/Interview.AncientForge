@@ -152,26 +152,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6319dbe5584eacb6e3452a3a90017b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Items>k__BackingField:
-  - <Name>k__BackingField: Wooden shield
-    <Value>k__BackingField: 90
-    <UseEffects>k__BackingField: []
-  - <Name>k__BackingField: Bow
-    <Value>k__BackingField: 150
-    <UseEffects>k__BackingField: []
-  - <Name>k__BackingField: Mana Potion
-    <Value>k__BackingField: 60
-    <UseEffects>k__BackingField: []
-  - <Name>k__BackingField: Sword
-    <Value>k__BackingField: 130
-    <UseEffects>k__BackingField: []
-  - <Name>k__BackingField: Long Sword
-    <Value>k__BackingField: 160
-    <UseEffects>k__BackingField: []
-  - <Name>k__BackingField: Plate Armor
-    <Value>k__BackingField: 300
-    <UseEffects>k__BackingField: []
-  <Money>k__BackingField: 280
+  money: 280
+  items:
+  - name: Wooden shield
+    value: 90
+    useEffects: []
+  - name: Bow
+    value: 150
+    useEffects: []
+  - name: Mana Potion
+    value: 60
+    useEffects: []
+  - name: Sword
+    value: 130
+    useEffects: []
+  - name: Long Sword
+    value: 160
+    useEffects: []
+  - name: Plate Armor
+    value: 300
+    useEffects: []
 --- !u!4 &117263
 Transform:
   m_ObjectHideFlags: 0
@@ -212,13 +212,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c,
         type: 3}
-      propertyPath: item.<Name>k__BackingField
+      propertyPath: item.sdfsdf
       value: Orange
-      objectReference: {fileID: 0}
-    - target: {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c,
-        type: 3}
-      propertyPath: item.<Value>k__BackingField
-      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6760591476060598716, guid: 70297e35c79c32843b2cbbda048d720c,
         type: 3}
@@ -368,44 +363,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c,
         type: 3}
-      propertyPath: item.<Name>k__BackingField
+      propertyPath: item.name
       value: Treasure Chest
       objectReference: {fileID: 0}
     - target: {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c,
         type: 3}
-      propertyPath: item.<Value>k__BackingField
+      propertyPath: item.value
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c,
         type: 3}
-      propertyPath: item.<UseEffects>k__BackingField.Array.size
+      propertyPath: item.sdfsdf
+      value: Treasure Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c,
+        type: 3}
+      propertyPath: item.useEffects.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c,
         type: 3}
-      propertyPath: item.<UseEffects>k__BackingField.Array.data[0].Data
+      propertyPath: item.useEffects.Array.data[0].Data
       value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c,
         type: 3}
-      propertyPath: item.<UseEffects>k__BackingField.Array.data[1].Data
+      propertyPath: item.useEffects.Array.data[1].Data
       value: Cursed Coin;-666
       objectReference: {fileID: 0}
     - target: {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c,
         type: 3}
-      propertyPath: item.<UseEffects>k__BackingField.Array.data[0].Script
+      propertyPath: item.useEffects.Array.data[0].Script
       value: 
       objectReference: {fileID: 11400000, guid: be5e0ee21fdf6e54092595c2c4deeaaf,
         type: 2}
     - target: {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c,
         type: 3}
-      propertyPath: item.<UseEffects>k__BackingField.Array.data[1].Script
+      propertyPath: item.useEffects.Array.data[1].Script
       value: 
       objectReference: {fileID: 11400000, guid: a95d44a25c32f784a89959fccb81ea23,
         type: 2}
     - target: {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c,
         type: 3}
-      propertyPath: item.<UseEffects>k__BackingField.Array.data[2].Script
+      propertyPath: item.useEffects.Array.data[2].Script
       value: 
       objectReference: {fileID: 11400000, guid: 08a2702dd2f3a5145aa489a3b83dc420,
         type: 2}
@@ -1002,7 +1002,6 @@ GameObject:
   m_Component:
   - component: {fileID: 884237432}
   - component: {fileID: 884237431}
-  - component: {fileID: 884237430}
   - component: {fileID: 884237433}
   m_Layer: 0
   m_Name: Main Camera
@@ -1011,14 +1010,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &884237430
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884237429}
-  m_Enabled: 1
 --- !u!20 &884237431
 Camera:
   m_ObjectHideFlags: 0
@@ -1371,13 +1362,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c,
         type: 3}
-      propertyPath: item.<Name>k__BackingField
+      propertyPath: item.sdfsdf
       value: Carrot
-      objectReference: {fileID: 0}
-    - target: {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c,
-        type: 3}
-      propertyPath: item.<Value>k__BackingField
-      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6760591476060598716, guid: 70297e35c79c32843b2cbbda048d720c,
         type: 3}
@@ -1501,13 +1487,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c,
         type: 3}
-      propertyPath: item.<Name>k__BackingField
+      propertyPath: item.sdfsdf
       value: Broccoli
-      objectReference: {fileID: 0}
-    - target: {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c,
-        type: 3}
-      propertyPath: item.<Value>k__BackingField
-      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6760591476060598716, guid: 70297e35c79c32843b2cbbda048d720c,
         type: 3}
@@ -1974,8 +1955,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14cf437c58cb87145abb345541d62679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Controller>k__BackingField: {fileID: 117262}
-  <CurrencyPostfix>k__BackingField: $
+  inventory: {fileID: 117262}
+  currency: $
 --- !u!1 &2003711424
 GameObject:
   m_ObjectHideFlags: 0
