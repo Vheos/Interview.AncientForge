@@ -4,6 +4,7 @@
 	using System.Collections.Generic;
 	using System.Linq;
 	using UnityEngine;
+	using UnityEngine.Serialization;
 
 	public class InventoryController : MonoBehaviour
 	{
@@ -47,6 +48,24 @@
 		{
 			Items.Add(item);
 			OnInventoryChanged();
+		}
+
+		public void RemoveItem(Item item)
+		{
+			if (Items.Remove(item))
+				OnInventoryChanged();
+		}
+
+		public void ChangeMoney(int change)
+		{
+			int previousValue = Money;
+
+			Money += change;
+			if (Money < 0)
+				Money = 0;
+
+			if (Money != previousValue)
+				OnInventoryChanged();
 		}
 	}
 }
