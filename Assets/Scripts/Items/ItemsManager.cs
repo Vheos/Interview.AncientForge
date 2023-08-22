@@ -24,6 +24,9 @@
 			
 			if (Input.GetKeyDown(KeyCode.Space))
 				inventoryController.SellAllItemsUpToValue(itemSellMaxValue);
+
+			if (Input.GetKeyDown(KeyCode.Tab))
+				inventoryController.UseFirstUsableItem();
 		}
 
 		private void SpawnNewItem()
