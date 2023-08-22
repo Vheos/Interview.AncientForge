@@ -7,9 +7,12 @@ Email us at work@ancientforgestudio.com with the repository link and a report of
 - [x] get a public git repository for this task and commit your changes as you go. We'd like to see your repository work ethic in action.
 
 ## Part 1:
-- [ ] Find a bug in the code logic and fix it
-- [ ] Optimize the ItemsManager class code
-- [ ] Extend the whole system by introducing a concept of a consumable item, that upon using, will either add money or a different item to the inventory.
+- [x] Find a bug in the code logic and fix it
+  - _the bug was caused by removing elements from the list while still iterating over. I fixed it by iterating over a COPY of the list. Another solution is to make a sublist of to-be-removed elements in one loop, then remove them in another loop_
+- [x] Optimize the ItemsManager class code
+  - _`ItemManager` was calling `FindObjectOfType<T>()` in its `Update()` to print the inventory. Not only is this bad approach (as it assumes the component you're looking for is the only/first one in the scene), but it's also very inefficient. `Find` methods should never be used in production code, let alone in `Update()`_
+  - _the rest of `ItemManager` could use some refactoring, but nothing else seemed to be out-of-place performance-wise_
+- [x] Extend the whole system by introducing a concept of a consumable item, that upon using, will either add money or a different item to the inventory.
 
 ## Part 2:
 - [ ] Implement a system that will be used to execute fights between certain army units.
