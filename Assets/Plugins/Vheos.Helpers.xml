@@ -1,0 +1,1736 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vheos.Helpers</name>
+    </assembly>
+    <members>
+        <member name="M:Vheos.Helpers.Common.Extensions.As``1(System.Object)">
+            <summary> Casts this value to type T. If it can'@this be cast, returns null.  </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.Cast``1(System.ValueType)">
+            <summary> Casts this value to type T. If it can'@this be cast, throws an InvalidCastException.  </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.Cast``1(System.Object)">
+            <summary> Casts this value to type T. If it can'@this be cast, throws an InvalidCastException.  </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.IsAssignableTo``1(System.Type)">
+            <summary> Checks if this type can be assigned to type T. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.IsNotAssignableTo``1(System.Type)">
+            <summary> Returns true if this type can'@this be assigned to type T. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.TryAs``1(System.Object,``0@)">
+            <summary> If this object can be cast to r's type, does so and returns true. Otherwise, sets r to null and returns false. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.TryCast``1(System.ValueType,``0@)">
+            <summary> If this object can be cast to r's type, does so and returns true. Otherwise, sets r to its default value and returns false. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.TryCast``1(System.Object,``0@)">
+            <summary> If this object can be cast to r's type, does so and returns true. Otherwise, sets r to its default value and returns false. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.TryNonNull``1(``0,``0@)">
+            <summary> If this object is non-null, assigns it to r and returns true. Otherwise, and sets r to null and returns false. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.TryNonNull``1(System.Nullable{``0},``0@)">
+            <summary> If this nullable is non-null, assigns it to r and returns true. Otherwise, and sets r to its default value and returns false. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.IsContainedIn``1(``0,System.Collections.Generic.ICollection{``0})">
+            <summary> Tests whether this object is contained within the collection a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.IsNotContainedIn``1(``0,System.Collections.Generic.ICollection{``0})">
+            <summary> Tests whether this object is not contained within the collection a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.HasFlagsAttribute(System.Enum)">
+            <summary> Checks if this enum uses the [Flags] attributes. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.ForEachSetFlag``1(``0,System.Action{``0})">
+            <summary> Calls action a for each flag set in this enum. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.IsNullOrEmpty(System.String)">
+            <summary> Checks if this string is null or empty (""). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.IsNotNullOrEmpty(System.String)">
+            <summary> Checks if this string is not null or empty (""). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.SplitCamelCase(System.String)">
+            <summary> Returns this string with spaces inserted between camel-case words. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.ToInvariant(System.IFormattable,System.String)">
+            <summary> Formats this value using culture-independen format a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.ChooseIf``1(``0,System.Func{``0,System.Boolean},``0)">
+            <summary> If test a evaluates to true, returns a. Otherwise, returns b. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.ChooseIfNonNull``1(``0,``0)">
+            <summary> If this object is non-null, returns a. Otherwise, returns b. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.Toggle(System.Boolean@)">
+            <summary> Returns this bool, then inverts it </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.Consume(System.Boolean@)">
+            <summary> Returns this bool, then resets it </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.To01(System.Boolean)">
+            <summary> Returns 0 for false and 1 for true. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.ToSign(System.Boolean)">
+            <summary> Returns -1 for false and +1 for true. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.Map``1(System.Boolean,``0,``0)">
+            <summary> Returns a for true and b for false. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.MakeCopy``1(``0[])">
+            <summary> Returns a shallow copy of this array. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.MakeCopy``1(System.Collections.Generic.List{``0})">
+            <summary> Returns a shallow copy of this list. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.MakeCopy``1(System.Collections.Generic.HashSet{``0})">
+            <summary> Returns a shallow copy of this list. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.MakeCopy``2(System.Collections.Generic.Dictionary{``0,``1})">
+            <summary> Returns a shallow copy of this list. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Extensions.SwapWith``1(``0@,``0@)">
+            <summary> Swaps the references of this object and a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Utility.GetDerivedTypes``1(System.Reflection.Assembly)">
+            <summary> Returns an enumerable of all types in the chosen (or calling) assembly that derive from type T. Ignores unbound generic types. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Utility.GetEnumValues``1">
+            <summary> Returns an array of all values defined in the given enum. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Utility.GetEnumValuesAsStrings``1">
+            <summary> Returns an enumerable of all values defined in the given enum as strings. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Utility.GetEnumNames``1">
+            <summary> Returns an array of all values defined in the given enum. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Utility.ParseEnum``1(System.String)">
+            <summary> Returns string text parsed as enum of type T. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Utility.Intersect``1(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{``0}})">
+            <summary> Returns an intersection of all chosen enumerables. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Utility.GetStackMethod(System.Int32)">
+            <summary> Returns a method that's n stack frames above the method you're currently in. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Utility.GetFormattedStack(System.Int32)">
+            <summary> Returns a formatted list of all methods on the stack. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Common.Utility.Swap``1(``0@,``0@)">
+            <summary> Swaps the reference of object t with a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Dump.Extensions.Dump(System.Object,System.Type,System.String[],Vheos.Helpers.Dump.MemberData,Vheos.Helpers.Dump.ClassMembers,Vheos.Helpers.Dump.ScopeModifiers,Vheos.Helpers.Dump.AccessModifiers)">
+            <summary> Returns a string of tab-separated data of all members of this object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Dump.Extensions.Dump(System.Type,System.String[],Vheos.Helpers.Dump.MemberData,Vheos.Helpers.Dump.ClassMembers,Vheos.Helpers.Dump.ScopeModifiers,Vheos.Helpers.Dump.AccessModifiers)">
+            <summary> Returns a string of tab-separated data of all members of this type. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.Add``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary> Adds elements a to this collection. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.Add``1(System.Collections.Generic.ICollection{``0},``0[])">
+            <inheritdoc cref="M:Vheos.Helpers.Collections.Extensions_ICollection.Add``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})"/>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.Remove``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary> Removes elements a from this collection. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.Remove``1(System.Collections.Generic.ICollection{``0},``0[])">
+            <inheritdoc cref="M:Vheos.Helpers.Collections.Extensions_ICollection.Remove``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})"/>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.TryGet``1(System.Collections.Generic.ICollection{``0},``0,``0@)">
+            <summary> If this collection contains the element a, assigns it to r and returns true. Otherwise, sets r to its default value and returns false. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.TryGetAny``1(System.Collections.Generic.ICollection{``0},``0@)">
+            <summary> If this collection contains any element, assigns it to r and returns true. Otherwise, sets r to its default value and returns false. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.TryAddUnique``1(System.Collections.Generic.ICollection{``0},``0)">
+            <summary> Adds element a if this collection doesn'@this contain it. Returns whether the collection was modified or not. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.TryAddUnique``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary> Adds each element from a if this collection doesn'@this contain it. Returns whether the collection was modified or not. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.TryAddUnique``1(System.Collections.Generic.ICollection{``0},``0[])">
+            <inheritdoc cref="M:Vheos.Helpers.Collections.Extensions_ICollection.TryAddUnique``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})"/>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.TryRemove``1(System.Collections.Generic.ICollection{``0},``0)">
+            <summary> Removes element a if this collection contains it. Returns whether the collection was modified or not. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.TryRemove``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary> Adds each element from a if this collection doesn'@this contain it. Returns whether the collection was modified or not. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.TryRemove``1(System.Collections.Generic.ICollection{``0},``0[])">
+            <inheritdoc cref="M:Vheos.Helpers.Collections.Extensions_ICollection.TryRemove``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})"/>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.IsEmpty``1(System.Collections.Generic.ICollection{``0})">
+            <summary> Tests whether this collection contains zero element. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.IsNotEmpty``1(System.Collections.Generic.ICollection{``0})">
+            <summary> Tests whether this collection contains any elements. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.IsNullOrEmpty``1(System.Collections.Generic.ICollection{``0})">
+            <summary> Tests whether this collection contains zero element. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_ICollection.IsNotNullOrEmpty``1(System.Collections.Generic.ICollection{``0})">
+            <summary> Tests whether this collection contains any elements. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IDictionary.TryGet``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1@)">
+            <summary> If this dictionary contains the key a, assigns its value to r and returns true. Otherwise, sets r to its default value and returns false. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IDictionary.TryGetNonNullValue``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1@)">
+            <summary> If this dictionary contains the key a and its value is non-null, assigns it to r and returns true. Otherwise, sets r to null and returns false. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IDictionary.TryGetValueAs``3(System.Collections.Generic.IDictionary{``0,``1},``0,``2@)">
+            <summary> If this dictionary contains the key a and its value can be cast to r's type, does so and returns true. Otherwise, sets r to its default value and returns false. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IDictionary.TryAddUnique``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)">
+            <summary> If this dictionary doesn'@this contain key a, adds it and sets it value to b. Returns whether the dictionary was modified or not. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IDictionary.TryAddDefault``2(System.Collections.Generic.IDictionary{``0,``1},``0)">
+            <summary> If this dictionary doesn'@this contain key a, adds it and sets it to its default value. Returns whether the dictionary was modified or not. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IDictionary.GetOrAdd``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)">
+            <summary> If this dictionary doesn'@this contain key a, adds it, sets it value to b and returns it. Otherwise, returns found value. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IEnumerable.TryGetAny``1(System.Collections.Generic.IEnumerable{``0},``0@)">
+            <summary> If this collection contains any element, assigns it to r and returns true. Otherwise, sets r to its default value and returns false. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IEnumerable.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary> Tests whether this enumerable contains zero element. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IEnumerable.IsNotEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary> Tests whether this enumerable contains any elements. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IEnumerable.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary> Tests whether this collection contains zero element. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IEnumerable.IsNotNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary> Tests whether this collection contains any elements. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.IsValid``1(System.Collections.Generic.IList{``0},System.Int32)">
+            <summary> Tests whether index a is within this list's bounds. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.DefaultOnInvalid``1(System.Collections.Generic.IList{``0},System.Int32)">
+            <summary> If this list contains index a, returns its value. Otherwise, return the default value for this list's type. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.First``1(System.Collections.Generic.IList{``0})">
+            <summary> Returns the first element from this list. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.FirstNonNull``1(System.Collections.Generic.IList{``0})">
+            <summary> Returns the first non-null element from this list. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.Last``1(System.Collections.Generic.IList{``0})">
+            <summary> Returns the last element from this list. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.LastNonNull``1(System.Collections.Generic.IList{``0})">
+            <summary> Returns the last non-null element from this list. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.SetFirst``1(System.Collections.Generic.IList{``0},``0)">
+            <summary> Sets the first element from this list to the object a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.SetFirstNonNull``1(System.Collections.Generic.IList{``0},``0)">
+            <summary> Sets the first non-null element from this list to the object a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.SetLast``1(System.Collections.Generic.IList{``0},``0)">
+            <summary> Sets the last element from this list to the value a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.SetLastNonNull``1(System.Collections.Generic.IList{``0},``0)">
+            <summary> Sets the last non-null element from this list to the value a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.RemoveFirst``1(System.Collections.Generic.IList{``0})">
+            <summary> Removes the first element from this list. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.RemoveFirstNonNull``1(System.Collections.Generic.IList{``0})">
+            <summary> Removes the first non-null element from this list. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.RemoveLast``1(System.Collections.Generic.IList{``0})">
+            <summary> Removes the last element from this list. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.RemoveLastNonNull``1(System.Collections.Generic.IList{``0})">
+            <summary> Removes the last non-null element from this list. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.TryGet``1(System.Collections.Generic.IList{``0},System.Int32,``0@)">
+            <summary> If this list contains the index a, returns true and assigns its value to r. Otherwise, returns false and sets r to its default value. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Collections.Extensions_IList.TryGetNonNull``1(System.Collections.Generic.IList{``0},System.Int32,``0@)">
+            <summary> If this list contains the index a and its value is non-null, returns true and assigns it to r. Otherwise, returns false and sets r to null. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Add(System.Single,System.Single)">
+            <summary>Returns <c><paramref name="this"/> + <paramref name="a"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Sub(System.Single,System.Single)">
+            <summary>Returns <c><paramref name="this"/> - <paramref name="a"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Mul(System.Single,System.Single)">
+            <summary>Returns <c><paramref name="this"/> * <paramref name="a"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Div(System.Single,System.Single)">
+            <summary>Returns <c><paramref name="this"/> / <paramref name="a"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Pow(System.Single,System.Single)">
+            <summary>Returns the <c><paramref name="a"/></c>-th power of <c><paramref name="this"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Root(System.Single,System.Single)">
+            <summary>Returns the <c><paramref name="a"/></c>-th root of <c><paramref name="this"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Mod(System.Single,System.Single)">
+            <summary>Returns <c><paramref name="this"/> % <paramref name="a"/></c> using truncated division</summary>
+            <remarks>
+            Examples:<br/><c>
+            +2 Mod +3 = +2<br/>
+            -2 Mod +3 = -2<br/>
+            +2 Mod -3 = +2<br/>
+            -2 Mod -3 = -2<br/>
+            </c></remarks>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.PosMod(System.Single,System.Single)">
+            <summary>Returns <c><paramref name="this"/> % <paramref name="a"/></c> using floored division</summary>
+            <remarks>
+            Examples:<br/><c>
+            +2 PosMod +3 = +2<br/>
+            -2 PosMod +3 = +1<br/>
+            +2 PosMod -3 = -1<br/>
+            -2 PosMod -3 = -2<br/>
+            </c></remarks>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Min(System.Single,System.Single)">
+            <summary>Returns the smaller number out of <c><paramref name="this"/> and <paramref name="a"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Max(System.Single,System.Single)">
+            <summary>Returns the bigger number out of <c><paramref name="this"/> and <paramref name="a"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Avg(System.Single,System.Single)">
+            <summary>Returns the arithmetic mean of <c><paramref name="this"/> and <paramref name="a"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Add(System.Single,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Add(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Sub(System.Single,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Sub(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Mul(System.Single,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Mul(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Div(System.Single,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Div(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Pow(System.Single,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Pow(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Root(System.Single,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Root(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Mod(System.Single,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Mod(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.PosMod(System.Single,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.PosMod(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Min(System.Single,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Min(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Max(System.Single,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Max(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Avg(System.Single,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Avg(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Neg(System.Single)">
+            <summary>Returns -<c><paramref name="this"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Inv(System.Single)">
+            <summary>Returns <c>1f / <paramref name="this"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Abs(System.Single)">
+            <summary>Returns the absolute value of <c><paramref name="this"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Sig(System.Single)">
+            <summary>Returns the sign of <c><paramref name="this"/></c></summary>
+            <remarks>
+            Examples:<br/><c>
+            +3 Abs = +1<br/>
+            0 Abs = 0<br/>
+            -3 Abs = -1<br/>
+            </c></remarks>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Sqrd(System.Single)">
+            <summary>Returns the square of <c><paramref name="this"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Sin(System.Single,System.Boolean)">
+            <summary>Returns the sine of <c><paramref name="this"/></c> radians
+            (or degrees, if <c><paramref name="degrees"/></c> is <c><see langword="true"/></c>)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Cos(System.Single,System.Boolean)">
+            <summary>Returns the cosine of <c><paramref name="this"/></c> radians
+            (or degrees, if <c><paramref name="degrees"/></c> is <c><see langword="true"/></c>)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Tan(System.Single,System.Boolean)">
+            <summary>Returns the tangent of <c><paramref name="this"/></c> radians
+            (or degrees, if <c><paramref name="degrees"/></c> is <c><see langword="true"/></c>)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Cot(System.Single,System.Boolean)">
+            <summary>Returns the cotangent of <c><paramref name="this"/></c> radians
+            (or degrees, if <c><paramref name="degrees"/></c> is <c><see langword="true"/></c>)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Sec(System.Single,System.Boolean)">
+            <summary>Returns the secant of <c><paramref name="this"/></c> radians
+            (or degrees, if <c><paramref name="degrees"/></c> is <c><see langword="true"/></c>)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Csc(System.Single,System.Boolean)">
+            <summary>Returns the secant of <c><paramref name="this"/></c> radians
+            (or degrees, if <c><paramref name="degrees"/></c> is <c><see langword="true"/></c>)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.ArcSin(System.Single,System.Boolean)">
+            <summary>Returns the arcsine of <c><paramref name="this"/></c> radians
+            (or degrees, if <c><paramref name="degrees"/></c> is <c><see langword="true"/></c>)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.ArcCos(System.Single,System.Boolean)">
+            <summary>Returns the arccosine of <c><paramref name="this"/></c> radians
+            (or degrees, if <c><paramref name="degrees"/></c> is <c><see langword="true"/></c>)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.ArcTan(System.Single,System.Boolean)">
+            <summary>Returns the arctangent of <c><paramref name="this"/></c> radians
+            (or degrees, if <c><paramref name="degrees"/></c> is <c><see langword="true"/></c>)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Round(System.Single)">
+            <summary>Returns <c><paramref name="this"/></c> rounded to the nearest integer</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.RoundDown(System.Single)">
+            <summary>Returns the biggest integer smaller than or equal to <c><paramref name="this"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.RoundUp(System.Single)">
+            <summary>Returns the smallest integer bigger than or equal to <c><paramref name="this"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.RoundTowardsZero(System.Single)">
+            <summary>Returns <c><paramref name="this"/></c> rounded down if positive, and up if negative</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.RoundAwayFromZero(System.Single)">
+            <summary>Returns <c><paramref name="this"/></c> rounded up if positive, and down if negative</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.RoundToDecimalDigits(System.Single,System.Int32)">
+            <summary>Returns <c><paramref name="this"/></c> rounded to the <c><paramref name="a"/></c>-th decimal place</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.RoundToMultiple(System.Single,System.Single)">
+            <summary>Returns <c><paramref name="this"/></c> rounded to the nearest multiple of <c><paramref name="a"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.RoundToMultiple(System.Single,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.RoundToMultiple(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Clamp01(System.Single)">
+            <summary>Returns <c><paramref name="this"/></c> clamped between <c>0</c> and <c>1</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Clamp(System.Single,System.Single,System.Single)">
+            <summary>Returns <c><paramref name="this"/></c> clamped between <c><paramref name="a"/></c> and <c><paramref name="b"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.ClampMin(System.Single,System.Single)">
+            <summary>Returns <c><paramref name="this"/></c> clamped to a minimum of <c><paramref name="a"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.ClampMax(System.Single,System.Single)">
+            <summary>Returns <c><paramref name="this"/></c> clamped to a maximum of <c><paramref name="a"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Lerp(System.Single,System.Single,System.Single)">
+            <summary>Returns a number at relative distance <c><paramref name="b"/></c> from <c><paramref name="this"/></c> to <c><paramref name="a"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.LerpClamped(System.Single,System.Single,System.Single)">
+            <summary>Returns a number at relative distance <c><paramref name="b"/></c> from <c><paramref name="this"/></c> to <c><paramref name="a"/></c> 
+            (clamped between <c><paramref name="this"/></c> and <c><paramref name="a"/></c>)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.InverseLerp(System.Single,System.Single,System.Single)">
+            <summary>Returns relative distance from <c><paramref name="a"/></c> to <c><paramref name="b"/></c> at which <c><paramref name="this"/></c> number is</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.InverseLerpClamped(System.Single,System.Single,System.Single)">
+            <summary>Returns relative distance from <c><paramref name="a"/></c>to <c><paramref name="b"/></c> at which <c><paramref name="this"/></c> number is  
+            (clamped between <c>0</c> and <c>1</c>)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Map(System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>Returns <c><paramref name="this"/></c> mapped from range <c>[<paramref name="a"/>, <paramref name="b"/>]</c> to <c>[<paramref name="c"/>, <paramref name="d"/>]</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.MapClamped(System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>Returns <c><paramref name="this"/></c> mapped from range <c>[<paramref name="a"/>, <paramref name="b"/>]</c> to <c>[<paramref name="c"/>, <paramref name="d"/>]</c>
+            (clamped between <c><paramref name="c"/></c> and <c><paramref name="d"/></c>)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.MapFrom01(System.Single,System.Single,System.Single)">
+            <summary>Returns <c><paramref name="this"/></c> mapped from range <c>[0, 1]</c> to <c>[<paramref name="a"/>, <paramref name="b"/>]</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.MapTo01(System.Single,System.Single,System.Single)">
+            <summary>Returns <c><paramref name="this"/></c> mapped from range <c>[<paramref name="a"/>, <paramref name="b"/>]</c> to <c>[0, 1]</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Clamp(System.Single,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Clamp(System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.ClampMin(System.Single,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.ClampMin(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.ClampMax(System.Single,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.ClampMax(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Lerp(System.Single,System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Lerp(System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.LerpClamped(System.Single,System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.LerpClamped(System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.InverseLerp(System.Single,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.InverseLerp(System.Single,System.Single,System.Single)"/> 
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.InverseLerpClamped(System.Single,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.InverseLerpClamped(System.Single,System.Single,System.Single)"/> 
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Map(System.Single,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Map(System.Single,System.Single,System.Single,System.Single,System.Single)"/> 
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.MapClamped(System.Single,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.MapClamped(System.Single,System.Single,System.Single,System.Single,System.Single)"/> 
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.MapFrom01(System.Single,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.MapFrom01(System.Single,System.Single,System.Single)"/> 
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.MapTo01(System.Single,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.MapTo01(System.Single,System.Single,System.Single)"/> 
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.IsPos(System.Single)">
+            <summary>Checks whether <c><paramref name="this"/> > 0</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.IsNeg(System.Single)">
+            <summary>Checks whether <c><paramref name="this"/> <![CDATA[<]]> 0</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.IsPosInf(System.Single)">
+            <summary>Checks whether <c><paramref name="this"/></c> is positive infinity (<c>+1f / 0f</c>)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.IsNegInf(System.Single)">
+            <summary>Checks whether <c><paramref name="this"/></c> is negative infinity (<c>-1f / 0f</c>)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.IsInf(System.Single)">
+            <summary>Checks whether <c><paramref name="this"/></c> is either positive or negative infinity</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.IsNaN(System.Single)">
+            <summary>Checks whether <c><paramref name="this"/></c> is not a number (<c>0f / 0f</c>)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.IsBetween(System.Single,System.Single,System.Single)">
+            <summary>Checks whether <c><paramref name="this"/></c> is between <c><paramref name="a"/></c> and <c><paramref name="b"/></c> (both inclusive)</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.IsBetween(System.Single,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.IsBetween(System.Single,System.Single,System.Single)"/> 
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.DistanceTo(System.Single,System.Single)">
+            <summary>Returns the distance between <c><paramref name="this"/></c> and <c><paramref name="a"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.DistanceTo(System.Single,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.DistanceTo(System.Single,System.Int32)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.ToInt(System.Single)">
+            <summary>Returns <c><paramref name="this"/></c> cast to <c><see cref="T:System.Int32"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.ToVector2(System.Single)">
+            <summary>Returns a vector with all its components set to <c><paramref name="this"/></c><br/>
+            <c>= <see langword="new"/>(<paramref name="this"/>, <paramref name="this"/>)</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.ToVector3(System.Single)">
+            <summary>Returns a vector with all its components set to <c><paramref name="this"/></c><br/>
+            <c>= <see langword="new"/>(<paramref name="this"/>, <paramref name="this"/>, <paramref name="this"/>)</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.ToVector4(System.Single)">
+            <summary>Returns a vector with all its components set to <c><paramref name="this"/></c><br/>
+            <c>= <see langword="new"/>(<paramref name="this"/>, <paramref name="this"/>, <paramref name="this"/>, <paramref name="this"/>)</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Append(System.Single)">
+            <summary>Returns a vector created by appending <c>0</c> to <c><paramref name="this"/></c><br/>
+            <c>= <see langword="new"/>(<paramref name="this"/>, 0)</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Append(System.Single,System.Single)">
+            <summary>Returns a vector created by appending <c><paramref name="y"/></c> to <c><paramref name="this"/></c><br/>
+            <c>= <see langword="new"/>(<paramref name="this"/>, <paramref name="y"/>)</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Append(System.Single,System.Single,System.Single)">
+            <summary>Returns a vector created by appending <c><paramref name="y"/></c> and <c><paramref name="z"/></c> to <c><paramref name="this"/></c><br/>
+            <c>= <see langword="new"/>(<paramref name="this"/>, <paramref name="y"/>, <paramref name="z"/>)</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Append(System.Single,UnityEngine.Vector2)">
+            <summary>Returns a vector created by appending <c><paramref name="a"/></c>'s components to <c><paramref name="this"/></c><br/>
+            <c>= <see langword="new"/>(<paramref name="this"/>, <paramref name="a"/>.x, <paramref name="a"/>.y)</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Append(System.Single,System.Single,System.Single,System.Single)">
+            <summary>Returns a vector created from appending <c><paramref name="y"/></c>, <c><paramref name="z"/></c> and <c><paramref name="w"/></c> to <c><paramref name="this"/></c><br/>
+            <c>= <see langword="new"/>(<paramref name="this"/>, <paramref name="y"/>, <paramref name="z"/>, <paramref name="w"/>)</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_float.Append(System.Single,UnityEngine.Vector3)">
+            <summary>Returns a vector created by appending <c><paramref name="a"/></c>'s components to <c><paramref name="this"/></c><br/>
+            <c>= <see langword="new"/>(<paramref name="this"/>, <paramref name="a"/>.x, <paramref name="a"/>.y, <paramref name="a"/>.z)</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Add(System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Add(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Sub(System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Sub(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Mul(System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Mul(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Div(System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Div(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Pow(System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Pow(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Root(System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Root(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Mod(System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Mod(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.PosMod(System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.PosMod(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Min(System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Min(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Max(System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Max(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Avg(System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Avg(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Add(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.Add(System.Int32,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Sub(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.Sub(System.Int32,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Mul(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.Mul(System.Int32,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Div(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.Div(System.Int32,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Pow(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.Pow(System.Int32,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Root(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.Root(System.Int32,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Mod(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.Mod(System.Int32,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.PosMod(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.PosMod(System.Int32,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Min(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.Min(System.Int32,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Max(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.Max(System.Int32,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Avg(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.Avg(System.Int32,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Neg(System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Neg(System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Inv(System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Inv(System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Abs(System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Abs(System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Sig(System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Sig(System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Sqrd(System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Sqrd(System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Sqrt(System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Sqrt(System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Sin(System.Int32)">
+            <summary>Returns the sine of <c><paramref name="this"/></c> degrees</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Cos(System.Int32)">
+            <summary>Returns the cosine of <c><paramref name="this"/></c> degrees</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Tan(System.Int32)">
+            <summary>Returns the tangent of <c><paramref name="this"/></c> degrees</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Cot(System.Int32)">
+            <summary>Returns the cotangent of <c><paramref name="this"/></c> degrees</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Sec(System.Int32)">
+            <summary>Returns the secant of <c><paramref name="this"/></c> degrees</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Csc(System.Int32)">
+            <summary>Returns the cosecant of <c><paramref name="this"/></c> degrees</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.ArcSin(System.Int32)">
+            <summary>Returns the arcsine of <c><paramref name="this"/></c> degrees</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.ArcCos(System.Int32)">
+            <summary>Returns the arccosine of <c><paramref name="this"/></c> degrees</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.ArcTan(System.Int32)">
+            <summary>Returns the arctangent of <c><paramref name="this"/></c> degrees</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.RoundToMultiple(System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.RoundToMultiple(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.RoundToMultiple(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.RoundToMultiple(System.Int32,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Clamp01(System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Clamp01(System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Clamp(System.Int32,System.Single,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Clamp(System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.ClampMin(System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.ClampMin(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.ClampMax(System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.ClampMax(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Lerp(System.Int32,System.Single,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Lerp(System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.LerpClamped(System.Int32,System.Single,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.LerpClamped(System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.InverseLerp(System.Int32,System.Single,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.InverseLerp(System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.InverseLerpClamped(System.Int32,System.Single,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.InverseLerpClamped(System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Map(System.Int32,System.Single,System.Single,System.Single,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Map(System.Single,System.Single,System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.MapClamped(System.Int32,System.Single,System.Single,System.Single,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.MapClamped(System.Single,System.Single,System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Clamp(System.Int32,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.Clamp(System.Int32,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.ClampMin(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.ClampMin(System.Int32,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.ClampMax(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.ClampMax(System.Int32,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Lerp(System.Int32,System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.Lerp(System.Int32,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.LerpClamped(System.Int32,System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.LerpClamped(System.Int32,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.InverseLerp(System.Int32,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.InverseLerp(System.Int32,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.InverseLerpClamped(System.Int32,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.InverseLerpClamped(System.Int32,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Map(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.Map(System.Int32,System.Single,System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.MapClamped(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.MapClamped(System.Int32,System.Single,System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.IsPos(System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.IsPos(System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.IsNeg(System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.IsNeg(System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.IsBetween(System.Int32,System.Single,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.IsBetween(System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.IsBetween(System.Int32,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.IsBetween(System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.IsZero(System.Int32)">
+            <summary>Checks whether <c><paramref name="this"/> == 0</c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.IsEven(System.Int32)">
+            <summary>Checks whether <c><paramref name="this"/></c> is an even number</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.IsOdd(System.Int32)">
+            <summary>Checks whether <c><paramref name="this"/></c> is an odd number</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.DistanceTo(System.Int32,System.Single)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.DistanceTo(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.DistanceTo(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_int.DistanceTo(System.Int32,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.ToFloat(System.Int32)">
+            <summary>Returns <c><paramref name="this"/></c> cast to <c><see cref="T:System.Single"/></c></summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.ToVector2Int(System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.ToVector2(System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.ToVector3Int(System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.ToVector3(System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Append(System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Append(System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Append(System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Append(System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Append(System.Int32,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Append(System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Append(System.Int32,UnityEngine.Vector2Int)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Append(System.Single,UnityEngine.Vector2)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Append(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Append(System.Single,System.Single,System.Single,System.Single)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_int.Append(System.Int32,UnityEngine.Vector3Int)">
+            <inheritdoc cref="M:Vheos.Helpers.Math.Extensions_float.Append(System.Single,UnityEngine.Vector3)"/>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Add(UnityEngine.Color,UnityEngine.Color)">
+            <summary> Adds (a.r, a.g, a.b, a.a) to this color's components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Sub(UnityEngine.Color,UnityEngine.Color)">
+            <summary> Subtracts (a.r, a.g, a.b, a.a) from this color's components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Mul(UnityEngine.Color,UnityEngine.Color)">
+            <summary> Multiplies this color's components by (a.r, a.g, a.b, a.a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Div(UnityEngine.Color,UnityEngine.Color)">
+            <summary> Divides this color's components by (a.r, a.g, a.b, a.a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Pow(UnityEngine.Color,UnityEngine.Color)">
+            <summary> Raises this color's components to the power of (a.r, a.g, a.b, a.a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Mod(UnityEngine.Color,UnityEngine.Color)">
+            <summary> Returns the remainder of this color's components divided by (a.r, a.g, a.b, a.a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.PosMod(UnityEngine.Color,UnityEngine.Color)">
+            <summary> Returns the positive remainder of this color's components divided by (a.r, a.g, a.b, a.a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.RoundToMultiple(UnityEngine.Color,UnityEngine.Color)">
+            <summary> Rounds this color's components to the nearest multiple of (a.r, a.g, a.b, a.a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Min(UnityEngine.Color,UnityEngine.Color)">
+            <summary> Returns the smaller between this color's components and (a.r, a.g, a.b, a.a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Max(UnityEngine.Color,UnityEngine.Color)">
+            <summary> Returns the greater between this color's components and (a.r, a.g, a.b, a.a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Avg(UnityEngine.Color,UnityEngine.Color)">
+            <summary> Returns the average of this color's components and (a.r, a.g, a.b, a.a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.ClampMin(UnityEngine.Color,UnityEngine.Color)">
+            <summary> Clamps this color's components to a minimum of (a.r, a.g, a.b, a.a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.ClampMax(UnityEngine.Color,UnityEngine.Color)">
+            <summary> Clamps this color's components to a maximum of (a.r, a.g, a.b, a.a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Clamp(UnityEngine.Color,UnityEngine.Color,UnityEngine.Color)">
+            <summary> Clamps this color's components between (a.r, a.g, a.b, a.a) and (b.r, b.g, b.b, b.a).</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Lerp(UnityEngine.Color,UnityEngine.Color,System.Single)">
+            <summary> Lerps from this color to a at alpha b. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.LerpClamped(UnityEngine.Color,UnityEngine.Color,System.Single)">
+            <summary> Lerps from this color to a at alpha b (clamped between 0 and 1). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Map(UnityEngine.Color,UnityEngine.Color,UnityEngine.Color,UnityEngine.Color,UnityEngine.Color)">
+            <summary> Maps this color from the range [a, b] to [c, d]. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.MapClamped(UnityEngine.Color,UnityEngine.Color,UnityEngine.Color,UnityEngine.Color,UnityEngine.Color)">
+            <summary> Maps this color from the range [a, b] to [c, d] (with clamped output). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.MapTo01(UnityEngine.Color,UnityEngine.Color,UnityEngine.Color)">
+            <summary> Maps this color from the range [a, b] to [0, 1]. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.MapFrom01(UnityEngine.Color,UnityEngine.Color,UnityEngine.Color)">
+            <summary> Maps this color from the range [0, 1] to [a, b]. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Add(UnityEngine.Color,System.Single,System.Single,System.Single,System.Single)">
+            <summary> Adds (r, g, b, a) to this color's components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Sub(UnityEngine.Color,System.Single,System.Single,System.Single,System.Single)">
+            <summary> Subtracts (r, g, b, a) from this color's components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Mul(UnityEngine.Color,System.Single,System.Single,System.Single,System.Single)">
+            <summary> Multiplies this color's components by (r, g, b, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Div(UnityEngine.Color,System.Single,System.Single,System.Single,System.Single)">
+            <summary> Divides this color's components by (r, g, b, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Pow(UnityEngine.Color,System.Single,System.Single,System.Single,System.Single)">
+            <summary> Raises this color's components to the power of (r, g, b, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Mod(UnityEngine.Color,System.Single,System.Single,System.Single,System.Single)">
+            <summary> Returns the remainder of this color's components divided by (r, g, b, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.PosMod(UnityEngine.Color,System.Single,System.Single,System.Single,System.Single)">
+            <summary> Returns the positive remainder of this color's components divided by (r, g, b, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.RoundToMultiple(UnityEngine.Color,System.Single,System.Single,System.Single,System.Single)">
+            <summary> Rounds this color's components to the nearest multiple of (r, g, b, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Min(UnityEngine.Color,System.Single,System.Single,System.Single,System.Single)">
+            <summary> Returns the smaller between this color's components and (r, g, b, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Max(UnityEngine.Color,System.Single,System.Single,System.Single,System.Single)">
+            <summary> Returns the greater between this color's components and (r, g, b, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Avg(UnityEngine.Color,System.Single,System.Single,System.Single,System.Single)">
+            <summary> Returns the average of this color's components and (r, g, b, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.ClampMin(UnityEngine.Color,System.Single,System.Single,System.Single,System.Single)">
+            <summary> Clamps this color's components to a minimum of (r, g, b, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.ClampMax(UnityEngine.Color,System.Single,System.Single,System.Single,System.Single)">
+            <summary> Clamps this color's components to a maximum of (r, g, b, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Lerp(UnityEngine.Color,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary> Lerps from this color to (r, g, b, a) at alpha lerpAlpha. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.LerpClamped(UnityEngine.Color,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary> Lerps from this color to (r, g, b, a) at alpha lerpAlpha (clamped between 0 and 1). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Add(UnityEngine.Color,System.Single)">
+            <summary> Adds (a, a, a, a) to this color's components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Sub(UnityEngine.Color,System.Single)">
+            <summary> Subtracts (a, a, a, a) from this color's components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Mul(UnityEngine.Color,System.Single)">
+            <summary> Multiplies this color's components by (a, a, a, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Div(UnityEngine.Color,System.Single)">
+            <summary> Divides this color's components by (a, a, a, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Pow(UnityEngine.Color,System.Single)">
+            <summary> Raises this color's components to the power of (a, a, a, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Mod(UnityEngine.Color,System.Single)">
+            <summary> Returns the remainder of this color's components divided by (a, yy). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.PosMod(UnityEngine.Color,System.Single)">
+            <summary> Returns the positive remainder of this color's components divided by (a, yy). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.RoundToMultiple(UnityEngine.Color,System.Single)">
+            <summary> Rounds this color's components to the nearest multiple of (a, a, a, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Min(UnityEngine.Color,System.Single)">
+            <summary> Returns the smaller between this color's components and (a, a, a, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Max(UnityEngine.Color,System.Single)">
+            <summary> Returns the greater between this color's components and (a, a, a, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Avg(UnityEngine.Color,System.Single)">
+            <summary> Returns the average of this color's components and (a, a, a, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.ClampMin(UnityEngine.Color,System.Single)">
+            <summary> Clamps this color's components to a minimum of (a, a, a, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.ClampMax(UnityEngine.Color,System.Single)">
+            <summary> Clamps this color's components to a maximum of (a, a, a, a). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Clamp(UnityEngine.Color,System.Single,System.Single)">
+            <summary> Clamps this color's components between (a, a, a, a) and (b, b, b, b).</summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.Lerp(UnityEngine.Color,System.Single,System.Single)">
+            <summary> Lerps from this color to (a, a, a, a) at alpha b. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.LerpClamped(UnityEngine.Color,System.Single,System.Single)">
+            <summary> Lerps from this color to (a, a, a, a) at alpha b (clamped between 0 and 1). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.NewR(UnityEngine.Color,System.Single)">
+            <summary> Returns this color with replaced component r. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.NewG(UnityEngine.Color,System.Single)">
+            <summary> Returns this color with replaced component g. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.NewB(UnityEngine.Color,System.Single)">
+            <summary> Returns this color with replaced component b. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.NewA(UnityEngine.Color,System.Single)">
+            <summary> Returns this color with replaced component a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.RGB(UnityEngine.Color)">
+            <summary> Returns this color's RGB components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.RBG(UnityEngine.Color)">
+            <summary> Returns this color's RBG components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.GRB(UnityEngine.Color)">
+            <summary> Returns this color's GRB components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.GBR(UnityEngine.Color)">
+            <summary> Returns this color's GBR components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.BRG(UnityEngine.Color)">
+            <summary> Returns this color's BRG components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Color.BGR(UnityEngine.Color)">
+            <summary> Returns this color's BGR components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions.EdgePoint(UnityEngine.Rect,UnityEngine.Vector2)">
+            <summary> Returns a point on this rectangle's edge given direction a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions.SurfacePoint(UnityEngine.Bounds,UnityEngine.Vector3)">
+            <summary> Returns a point on this cuboid's surface given direction a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions.LocalBounds(UnityEngine.Collider)">
+            <summary> Returns this collider's local axis-aligned bounds. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions.ToRect(UnityEngine.Bounds)">
+            <summary> Returns this cuboid as a rectangle (with z depth removed). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.Neg(UnityEngine.Quaternion)">
+            <summary> Returns the opposite of this rotation. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.Add(UnityEngine.Quaternion,UnityEngine.Quaternion)">
+            <summary> Adds a to this rotation. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.Sub(UnityEngine.Quaternion,UnityEngine.Quaternion)">
+            <summary> Subtracts a from this rotation. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.Lerp(UnityEngine.Quaternion,UnityEngine.Quaternion,System.Single)">
+            <summary> Lerps from this rotation to a at alpha b. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.LerpClamped(UnityEngine.Quaternion,UnityEngine.Quaternion,System.Single)">
+            <summary> Lerps from this rotation to a at alpha b (clamped between 0 and 1). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.SLerp(UnityEngine.Quaternion,UnityEngine.Quaternion,System.Single)">
+            <summary> Spherically lerps from this rotation to a at alpha b. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.SLerpClamped(UnityEngine.Quaternion,UnityEngine.Quaternion,System.Single)">
+            <summary> Spherically lerps from this rotation to a at alpha b (clamped between 0 and 1). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.Add(UnityEngine.Quaternion,UnityEngine.Vector3)">
+            <summary> Adds angles a to this rotation. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.Sub(UnityEngine.Quaternion,UnityEngine.Vector3)">
+            <summary> Subtracts angles a from this rotation. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.Lerp(UnityEngine.Quaternion,UnityEngine.Vector3,System.Single)">
+            <summary> Lerps from this rotation to angles a at alpha b. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.LerpClamped(UnityEngine.Quaternion,UnityEngine.Vector3,System.Single)">
+            <summary> Lerps from this rotation to angles a at alpha b (clamped between 0 and 1). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.SLerp(UnityEngine.Quaternion,UnityEngine.Vector3,System.Single)">
+            <summary> Spherically lerps from this rotation to angles a at alpha b. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.SLerpClamped(UnityEngine.Quaternion,UnityEngine.Vector3,System.Single)">
+            <summary> Spherically lerps from this rotation to angles a at alpha b (clamped between 0 and 1). </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.Right(UnityEngine.Quaternion)">
+            <summary> Returns right direction relative to this rotation. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.Left(UnityEngine.Quaternion)">
+            <summary> Returns left direction relative to this rotation. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.Up(UnityEngine.Quaternion)">
+            <summary> Returns up direction relative to this rotation. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.Down(UnityEngine.Quaternion)">
+            <summary> Returns down direction relative to this rotation. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.Far(UnityEngine.Quaternion)">
+            <summary> Returns far direction relative to this rotation. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.Near(UnityEngine.Quaternion)">
+            <summary> Returns near direction relative to this rotation. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.AngleTo(UnityEngine.Quaternion,UnityEngine.Quaternion)">
+            <summary> Returns angle from this rotation to a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.AngleToIdentity(UnityEngine.Quaternion)">
+            <summary> Returns angle created by this rotation. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.Math.Extensions_Quaternion.ToAngles(UnityEngine.Quaternion)">
+            <summary> Returns this rotation's euler angles. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.RNG.Random_Extensions.Random``1(System.Collections.Generic.IList{``0})">
+            <summary> Returns a random element from this list. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.RNG.Random_Extensions.Shuffle``1(System.Collections.Generic.IList{``0})">
+            <summary> Randomizes the indices of all elements in this list. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.RNG.Random_Extensions.Roll(System.Single)">
+            <summary> Returns true with @this probability. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.RNG.Random_Extensions.RollPercent(System.Single)">
+            <summary> Returns true with @this% probability. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.RNG.Random_Extensions.RollPercent(System.Int32)">
+            <summary> Returns true with @this% probability. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Camera.CursorRay(UnityEngine.Camera)">
+            <summary> Returns a ray going from this camera through the mouse cursor. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Camera.ScreenPlane(UnityEngine.Camera,UnityEngine.Vector3)">
+            <summary> Returns a plane facing this camera and containing world point a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Camera.ScreenPlane(UnityEngine.Camera,System.Single)">
+            <summary> Returns a plane facing this camera and containing world point a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Camera.CursorToWorldPoint(UnityEngine.Camera,System.Single)">
+            <summary> Returns a world point under the mouse cursor and at distnace a from this camera. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Camera.CursorToPlanePoint(UnityEngine.Camera,UnityEngine.Plane)">
+            <summary> Returns a world point under the mouse cursor and on plane a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.Unparent(UnityEngine.Component,System.Boolean)">
+            <summary> Places this object at the root of the hierarchy. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.MoveToScene(UnityEngine.Component,UnityEngine.SceneManagement.Scene)">
+            <summary> Moves this object to the root of the chosen scene </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.BecomeSiblingOf(UnityEngine.Component,UnityEngine.GameObject,System.Boolean)">
+            <summary> Attaches this objects to a's parent.gameObject. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.BecomeChildOf(UnityEngine.Component,UnityEngine.GameObject,System.Boolean)">
+            <summary> Attaches this object to a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.BecomeSiblingOf(UnityEngine.Component,UnityEngine.Component,System.Boolean)">
+            <summary> Attaches this objects to a's parent.gameObject. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.BecomeChildOf(UnityEngine.Component,UnityEngine.Component,System.Boolean)">
+            <summary> Attaches this object to a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.IsAtRoot(UnityEngine.Component)">
+            <summary> Checks whether this object is at the topmost level in the hierarchy. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.HasParent(UnityEngine.Component)">
+            <summary> Checks whether this object has a parent.gameObject. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.HasAnyChild(UnityEngine.Component)">
+            <summary> Checks whether this object has a child. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.IsParentOf(UnityEngine.Component,UnityEngine.GameObject)">
+            <summary> Checks whether this object is right above a in the heirarchy. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.IsSiblingOf(UnityEngine.Component,UnityEngine.GameObject)">
+            <summary> Checks whether this object has the same parent as a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.IsChildOf(UnityEngine.Component,UnityEngine.GameObject)">
+            <summary> Checks whether this object is right below a in the hierarchy. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.IsParentOf(UnityEngine.Component,UnityEngine.Component)">
+            <summary> Checks whether this object is right above a in the heirarchy. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.IsSiblingOf(UnityEngine.Component,UnityEngine.Component)">
+            <summary> Checks whether this object has the same parent as a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.IsChildOf(UnityEngine.Component,UnityEngine.Component)">
+            <summary> Checks whether this object is right below a in the hierarchy. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.FindChild(UnityEngine.Component,System.String)">
+            <summary> Returns this object's child with name a. If it doesn'@this exist, returns null.</summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.FindChild``1(UnityEngine.Component,System.String)">
+            <summary> Returns component T attached to this object's child with name a. If it doesn'@this exist, returns null.</summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.GetParent(UnityEngine.Component)">
+            <summary> Returns this object's parent.gameObject. If it doesn'@this exist, returns null. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.GetAncestors(UnityEngine.Component)">
+            <summary> Returns an enumerable of this object's ancestors. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.GetRootAncestor(UnityEngine.Component)">
+            <summary> Returns the topmost ancestor. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.DistanceTo(UnityEngine.Component,UnityEngine.GameObject)">
+            <summary> Returns the distance between this object and a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.OffsetTo(UnityEngine.Component,UnityEngine.GameObject)">
+            <summary> Returns the offset from this object to a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.OffsetFrom(UnityEngine.Component,UnityEngine.GameObject)">
+            <summary> Returns the offset from a to this object.gameObject. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.DirectionTowards(UnityEngine.Component,UnityEngine.GameObject)">
+            <summary> Returns the direction from this object towards a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.DirectionAwayFrom(UnityEngine.Component,UnityEngine.GameObject)">
+            <summary> Returns the direction from a towards this object.gameObject. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.RayTowards(UnityEngine.Component,UnityEngine.GameObject)">
+            <summary> Returns a ray starting at this object and going towards towards a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.RayAwayFrom(UnityEngine.Component,UnityEngine.GameObject)">
+            <summary> Returns a ray starting at a and going towards this object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ScreenDistanceTo(UnityEngine.Component,UnityEngine.GameObject,UnityEngine.Camera)">
+            <summary> Returns the on-screen distance between this object and a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ScreenOffsetTo(UnityEngine.Component,UnityEngine.GameObject,UnityEngine.Camera)">
+            <summary> Returns the on-screen offset from this object to a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ScreenOffsetFrom(UnityEngine.Component,UnityEngine.GameObject,UnityEngine.Camera)">
+            <summary> Returns the on-screen offset from a to this object from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ScreenDirectionTowards(UnityEngine.Component,UnityEngine.GameObject,UnityEngine.Camera)">
+            <summary> Returns the on-screen direction from this object towards a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ScreenDirectionAwayFrom(UnityEngine.Component,UnityEngine.GameObject,UnityEngine.Camera)">
+            <summary> Returns the on-screen direction from a towards this object from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.DistanceTo(UnityEngine.Component,UnityEngine.Component)">
+            <summary> Returns the distance between this object and a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.OffsetTo(UnityEngine.Component,UnityEngine.Component)">
+            <summary> Returns the offset from this object to a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.OffsetFrom(UnityEngine.Component,UnityEngine.Component)">
+            <summary> Returns the offset from a to this object.gameObject. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.DirectionTowards(UnityEngine.Component,UnityEngine.Component)">
+            <summary> Returns the direction from this object towards a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.DirectionAwayFrom(UnityEngine.Component,UnityEngine.Component)">
+            <summary> Returns the direction from a towards this object.gameObject. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.RayTowards(UnityEngine.Component,UnityEngine.Component)">
+            <summary> Returns a ray starting at this object and going towards towards a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.RayAwayFrom(UnityEngine.Component,UnityEngine.Component)">
+            <summary> Returns a ray starting at a and going towards this object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ScreenDistanceTo(UnityEngine.Component,UnityEngine.Component,UnityEngine.Camera)">
+            <summary> Returns the on-screen distance between this object and a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ScreenOffsetTo(UnityEngine.Component,UnityEngine.Component,UnityEngine.Camera)">
+            <summary> Returns the on-screen offset from this object to a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ScreenOffsetFrom(UnityEngine.Component,UnityEngine.Component,UnityEngine.Camera)">
+            <summary> Returns the on-screen offset from a to this object from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ScreenDirectionTowards(UnityEngine.Component,UnityEngine.Component,UnityEngine.Camera)">
+            <summary> Returns the on-screen direction from this object towards a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ScreenDirectionAwayFrom(UnityEngine.Component,UnityEngine.Component,UnityEngine.Camera)">
+            <summary> Returns the on-screen direction from a towards this object from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.DistanceTo(UnityEngine.Component,UnityEngine.Vector3)">
+            <summary> Returns the distance between this object and a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.OffsetTo(UnityEngine.Component,UnityEngine.Vector3)">
+            <summary> Returns the offset from this object to a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.OffsetFrom(UnityEngine.Component,UnityEngine.Vector3)">
+            <summary> Returns the offset from a to this object.gameObject. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.DirectionTowards(UnityEngine.Component,UnityEngine.Vector3)">
+            <summary> Returns the direction from this object towards a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.DirectionAwayFrom(UnityEngine.Component,UnityEngine.Vector3)">
+            <summary> Returns the direction from a towards this object.gameObject. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.RayTowards(UnityEngine.Component,UnityEngine.Vector3)">
+            <summary> Returns a ray starting at this object and going towards towards a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.RayAwayFrom(UnityEngine.Component,UnityEngine.Vector3)">
+            <summary> Returns a ray starting at a and going towards this object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ScreenDistanceTo(UnityEngine.Component,UnityEngine.Vector3,UnityEngine.Camera)">
+            <summary> Returns the on-screen distance between this object and a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ScreenOffsetTo(UnityEngine.Component,UnityEngine.Vector3,UnityEngine.Camera)">
+            <summary> Returns the on-screen offset from this object to a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ScreenOffsetFrom(UnityEngine.Component,UnityEngine.Vector3,UnityEngine.Camera)">
+            <summary> Returns the on-screen offset from a to this object from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ScreenDirectionTowards(UnityEngine.Component,UnityEngine.Vector3,UnityEngine.Camera)">
+            <summary> Returns the on-screen direction from this object towards a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ScreenDirectionAwayFrom(UnityEngine.Component,UnityEngine.Vector3,UnityEngine.Camera)">
+            <summary> Returns the on-screen direction from a towards this object from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.HasComponent``1(UnityEngine.Component)">
+            <inheritdoc cref="!:GameObject.HasComponent&lt;T&gt;(UnityEngine.GameObject)"/>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ParentHasComponent``1(UnityEngine.Component)">
+            <inheritdoc cref="!:GameObject.ParentHasComponent&lt;T&gt;(UnityEngine.GameObject)"/>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ChildHasComponent``1(UnityEngine.Component)">
+            <inheritdoc cref="!:GameObject.ChildHasComponent&lt;T&gt;(UnityEngine.GameObject)"/>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.CreateSiblingGameObject(UnityEngine.Component,System.String)">
+            <inheritdoc cref="!:GameObject.CreateSiblingGameObject(UnityEngine.GameObject, string)"/>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.CreateSiblingComponent``1(UnityEngine.Component,``0,System.String)">
+            <inheritdoc cref="!:GameObject.CreateSiblingComponent&lt;T&gt;(UnityEngine.GameObject, T, string)"/>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.CreateSiblingComponent``1(UnityEngine.Component,System.String)">
+            <inheritdoc cref="!:GameObject.CreateSiblingComponent&lt;T&gt;(UnityEngine.GameObject, string)"/>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.CreateChildGameObject(UnityEngine.Component,System.String)">
+            <inheritdoc cref="!:GameObject.CreateChildGameObject(UnityEngine.GameObject, string)"/>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.CreateChildComponent``1(UnityEngine.Component,``0,System.String)">
+            <inheritdoc cref="!:GameObject.CreateChildComponent&lt;T&gt;(UnityEngine.GameObject, T, string)"/>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.CreateChildComponent``1(UnityEngine.Component,System.String)">
+            <inheritdoc cref="!:GameObject.CreateChildComponent&lt;T&gt;(UnityEngine.GameObject, string)"/>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.GetOrAddComponent``1(UnityEngine.Component)">
+            <summary> Returns component T attached to this object. If there's none, adds one. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.GetChildGameObjects(UnityEngine.Component)">
+            <summary> Returns an enumerable of this object's children's GameObjects. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.GetSiblingGameObjects(UnityEngine.Component)">
+            <summary> Returns an enumerable of this object's siblings' GameObjects. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.GetChildComponents``1(UnityEngine.Component)">
+            <summary> Returns an enumerable of this object's children's components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.GetSiblingComponents``1(UnityEngine.Component)">
+            <summary> Returns an enumerable of this object's siblings' components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.GetGameObjects``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary> Returns enumerable of GameObjects of all of these components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.GetChildComponent``1(UnityEngine.Component)">
+            <summary> Returns the first component of type T in this object's children. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.GetSiblingComponent``1(UnityEngine.Component)">
+            <summary> Returns the first component of type T in this object's siblings. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.TryGetComponent``1(UnityEngine.Component,``0@)">
+            <summary> Assigns component T to a. Returns whether any component was found. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.Destroy(UnityEngine.Component)">
+            <summary> Destroys this component. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.DestroyInstantly(UnityEngine.Component)">
+            <summary> Destroys this component instantly. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.Destroy``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary> Destroys these components. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.DestroyInstantly``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary> Destroys these components instantly. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.DestroyObject(UnityEngine.Component)">
+            <summary> Destroys this component's object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.DestroyObjectInstantly(UnityEngine.Component)">
+            <summary> Destroys this component's object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.DestroyObject``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary> Destroys these components' objects. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.DestroyObjectInstantly``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary> Destroys these components' objects instantly. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.SetPhysics(UnityEngine.Component,System.Boolean)">
+            <summary> Makes this object react to (or ignore) physics forces. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.SetCollisions(UnityEngine.Component,System.Boolean)">
+            <summary> Makes this object collide with (or ignore) other colliders. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.ResetLocalTransform(UnityEngine.Component)">
+            <summary> Resets a's local position, rotation and scale. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.SetCollisionsWith(UnityEngine.Component,UnityEngine.GameObject,System.Boolean)">
+            <summary> Makes this object collide with (or ignore) object a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.SetCollisionsWith(UnityEngine.Component,System.Collections.Generic.IEnumerable{UnityEngine.GameObject},System.Boolean)">
+            <summary> Makes this object collide with (or ignore) objects from aCollection. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.CopyTransformFrom(UnityEngine.Component,UnityEngine.GameObject)">
+            <summary> Copies a's transform. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.CopyRigidbodyFrom(UnityEngine.Component,UnityEngine.GameObject,System.Boolean)">
+            <summary> Copies a's rigidbody. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.SetCollisionsWith(UnityEngine.Component,UnityEngine.Component,System.Boolean)">
+            <summary> Makes this object collide with (or ignore) object a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.SetCollisionsWith(UnityEngine.Component,System.Collections.Generic.IEnumerable{UnityEngine.Component},System.Boolean)">
+            <summary> Makes this object collide with (or ignore) objects from aCollection. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.CopyTransformFrom(UnityEngine.Component,UnityEngine.Component)">
+            <summary> Copies a's transform. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Component.CopyRigidbodyFrom(UnityEngine.Component,UnityEngine.Component,System.Boolean)">
+            <summary> Copies a's rigidbody. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.Unparent(UnityEngine.GameObject,System.Boolean)">
+            <summary> Places this object at the root of the hierarchy </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.MoveToScene(UnityEngine.GameObject,UnityEngine.SceneManagement.Scene)">
+            <summary> Moves this object to the root of the chosen scene </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.BecomeSiblingOf(UnityEngine.GameObject,UnityEngine.GameObject,System.Boolean)">
+            <summary> Attaches this objects to a's parent. </summary>
+            <remarks> If a is a root object, moves this object to the root of a's scene </remarks>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.BecomeChildOf(UnityEngine.GameObject,UnityEngine.GameObject,System.Boolean)">
+            <summary> Attaches this object to a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.BecomeSiblingOf(UnityEngine.GameObject,UnityEngine.Component,System.Boolean)">
+            <summary> Attaches this objects to a's parent. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.BecomeChildOf(UnityEngine.GameObject,UnityEngine.Component,System.Boolean)">
+            <summary> Attaches this object to a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.IsAtRoot(UnityEngine.GameObject)">
+            <summary> Checks whether this object is at the topmost level in the hierarchy. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.HasParent(UnityEngine.GameObject)">
+            <summary> Checks whether this object has a parent. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.HasAnyChild(UnityEngine.GameObject)">
+            <summary> Checks whether this object has a child. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.IsParentOf(UnityEngine.GameObject,UnityEngine.GameObject)">
+            <summary> Checks whether this object is right above a in the heirarchy. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.IsSiblingOf(UnityEngine.GameObject,UnityEngine.GameObject)">
+            <summary> Checks whether this object has the same parent as a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.IsChildOf(UnityEngine.GameObject,UnityEngine.GameObject)">
+            <summary> Checks whether this object is right below a in the hierarchy. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.IsParentOf(UnityEngine.GameObject,UnityEngine.Component)">
+            <summary> Checks whether this object is right above a in the heirarchy. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.IsSiblingOf(UnityEngine.GameObject,UnityEngine.Component)">
+            <summary> Checks whether this object has the same parent as a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.IsChildOf(UnityEngine.GameObject,UnityEngine.Component)">
+            <summary> Checks whether this object is right below a in the hierarchy. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.FindChild(UnityEngine.GameObject,System.String)">
+            <summary> Returns this object's child with name a. If it doesn'@this exist, returns null.</summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.FindChild``1(UnityEngine.GameObject,System.String)">
+            <summary> Returns component T attached to this object's child with name a. If it doesn'@this exist, returns null.</summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.GetParent(UnityEngine.GameObject)">
+            <summary> Returns this object's parent. If it doesn'@this exist, returns null. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.GetAncestors(UnityEngine.GameObject)">
+            <summary> Returns an enumerable of this object's ancestors. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.GetRootAncestor(UnityEngine.GameObject)">
+            <summary> Returns the topmost ancestor. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.DistanceTo(UnityEngine.GameObject,UnityEngine.GameObject)">
+            <summary> Returns the distance between this object and a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.OffsetTo(UnityEngine.GameObject,UnityEngine.GameObject)">
+            <summary> Returns the offset from this object to a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.OffsetFrom(UnityEngine.GameObject,UnityEngine.GameObject)">
+            <summary> Returns the offset from a to this object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.DirectionTowards(UnityEngine.GameObject,UnityEngine.GameObject)">
+            <summary> Returns the direction from this object towards a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.DirectionAwayFrom(UnityEngine.GameObject,UnityEngine.GameObject)">
+            <summary> Returns the direction from a towards this object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.RayTowards(UnityEngine.GameObject,UnityEngine.GameObject)">
+            <summary> Returns a ray starting at this object and going towards towards a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.RayAwayFrom(UnityEngine.GameObject,UnityEngine.GameObject)">
+            <summary> Returns a ray starting at a and going towards this object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ScreenDistanceTo(UnityEngine.GameObject,UnityEngine.GameObject,UnityEngine.Camera)">
+            <summary> Returns the on-screen distance between this object and a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ScreenOffsetTo(UnityEngine.GameObject,UnityEngine.GameObject,UnityEngine.Camera)">
+            <summary> Returns the on-screen offset from this object to a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ScreenOffsetFrom(UnityEngine.GameObject,UnityEngine.GameObject,UnityEngine.Camera)">
+            <summary> Returns the on-screen offset from a to this object from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ScreenDirectionTowards(UnityEngine.GameObject,UnityEngine.GameObject,UnityEngine.Camera)">
+            <summary> Returns the on-screen direction from this object towards a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ScreenDirectionAwayFrom(UnityEngine.GameObject,UnityEngine.GameObject,UnityEngine.Camera)">
+            <summary> Returns the on-screen direction from a towards this object from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.DistanceTo(UnityEngine.GameObject,UnityEngine.Component)">
+            <summary> Returns the distance between this object and a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.OffsetTo(UnityEngine.GameObject,UnityEngine.Component)">
+            <summary> Returns the offset from this object to a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.OffsetFrom(UnityEngine.GameObject,UnityEngine.Component)">
+            <summary> Returns the offset from a to this object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.DirectionTowards(UnityEngine.GameObject,UnityEngine.Component)">
+            <summary> Returns the direction from this object towards a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.DirectionAwayFrom(UnityEngine.GameObject,UnityEngine.Component)">
+            <summary> Returns the direction from a towards this object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.RayTowards(UnityEngine.GameObject,UnityEngine.Component)">
+            <summary> Returns a ray starting at this object and going towards towards a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.RayAwayFrom(UnityEngine.GameObject,UnityEngine.Component)">
+            <summary> Returns a ray starting at a and going towards this object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ScreenDistanceTo(UnityEngine.GameObject,UnityEngine.Component,UnityEngine.Camera)">
+            <summary> Returns the on-screen distance between this object and a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ScreenOffsetTo(UnityEngine.GameObject,UnityEngine.Component,UnityEngine.Camera)">
+            <summary> Returns the on-screen offset from this object to a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ScreenOffsetFrom(UnityEngine.GameObject,UnityEngine.Component,UnityEngine.Camera)">
+            <summary> Returns the on-screen offset from a to this object from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ScreenDirectionTowards(UnityEngine.GameObject,UnityEngine.Component,UnityEngine.Camera)">
+            <summary> Returns the on-screen direction from this object towards a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ScreenDirectionAwayFrom(UnityEngine.GameObject,UnityEngine.Component,UnityEngine.Camera)">
+            <summary> Returns the on-screen direction from a towards this object from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.DistanceTo(UnityEngine.GameObject,UnityEngine.Vector3)">
+            <summary> Returns the distance between this object and a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.OffsetTo(UnityEngine.GameObject,UnityEngine.Vector3)">
+            <summary> Returns the offset from this object to a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.OffsetFrom(UnityEngine.GameObject,UnityEngine.Vector3)">
+            <summary> Returns the offset from a to this object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.DirectionTowards(UnityEngine.GameObject,UnityEngine.Vector3)">
+            <summary> Returns the direction from this object towards a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.DirectionAwayFrom(UnityEngine.GameObject,UnityEngine.Vector3)">
+            <summary> Returns the direction from a towards this object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.RayTowards(UnityEngine.GameObject,UnityEngine.Vector3)">
+            <summary> Returns a ray starting at this object and going towards towards a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.RayAwayFrom(UnityEngine.GameObject,UnityEngine.Vector3)">
+            <summary> Returns a ray starting at a and going towards this object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ScreenDistanceTo(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Camera)">
+            <summary> Returns the on-screen distance between this object and a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ScreenOffsetTo(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Camera)">
+            <summary> Returns the on-screen offset from this object to a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ScreenOffsetFrom(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Camera)">
+            <summary> Returns the on-screen offset from a to this object from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ScreenDirectionTowards(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Camera)">
+            <summary> Returns the on-screen direction from this object towards a from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ScreenDirectionAwayFrom(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Camera)">
+            <summary> Returns the on-screen direction from a towards this object from camera b's perspective. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.HasComponent``1(UnityEngine.GameObject)">
+            <summary> Checks whether this object has a component T. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ParentHasComponent``1(UnityEngine.GameObject)">
+            <summary> Checks whether this object's parent has a component T. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ChildHasComponent``1(UnityEngine.GameObject)">
+            <summary> Checks whether any of this object's children has a component T. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.SiblingHasComponent``1(UnityEngine.GameObject)">
+            <summary> Checks whether any of this object's siblings has a component T. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.GetParentComponent``1(UnityEngine.GameObject)">
+            <summary> Returns the first component of type T in this object's parent. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.GetChildComponent``1(UnityEngine.GameObject)">
+            <summary> Returns the first component of type T in any of this object's children. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.GetSiblingComponent``1(UnityEngine.GameObject)">
+            <summary> Returns the first component of type T in any of this object's siblings. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.GetParentComponents``1(UnityEngine.GameObject)">
+            <summary> Returns an enumerable of this object's parent's components of type T. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.GetChildComponents``1(UnityEngine.GameObject)">
+            <summary> Returns an enumerable of this object's children's components of type T. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.GetSiblingComponents``1(UnityEngine.GameObject)">
+            <summary> Returns an enumerable of this object's siblings' components of type T. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.GetChildGameObjects(UnityEngine.GameObject)">
+            <summary> Returns an enumerable of this object's children's GameObjects. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.GetSiblingGameObjects(UnityEngine.GameObject)">
+            <summary> Returns an enumerable of this object's siblings' GameObjects. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.CreateChildGameObject(UnityEngine.GameObject,System.String)">
+            <summary> Creates and returns a new game object as a child of this object, with name b. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.CreateChildComponent``1(UnityEngine.GameObject,``0,System.String)">
+            <summary> Creates a new game object as a child of this object, from prefab a and with name b. Returns its component of type T. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.CreateChildComponent``1(UnityEngine.GameObject,System.String)">
+            <summary> Creates a new game object as a child of this object, with name b. Adds a default component of type T, then returns it. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.CreateSiblingGameObject(UnityEngine.GameObject,System.String)">
+            <summary> Creates and returns a new game object as a sibling of this object, with name b. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.CreateSiblingComponent``1(UnityEngine.GameObject,``0,System.String)">
+            <summary> Creates a new game object as a sibling of this object, from prefab a and with name b. Returns its component of type T. </summary>
+            <remarks> If called: <br/>
+            • on a root object <br/>
+            • during additive scene load <br/>
+            • from <c><see langword="Awake"/>()</c> or <c><see langword="OnEnable"/>()</c> <br/>
+            the component will get instantiated at the root of the recently active scene <br/>
+            it will be moved to this object's scene only after its own <c><see langword="Awake"/>()</c> and <c><see langword="OnEnable"/>()</c> finish executing</remarks>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.CreateSiblingComponent``1(UnityEngine.GameObject,System.String)">
+            <summary> Creates a new game object as a sibling of this object, with name b. Adds a default component of type T, then returns it. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.GetOrAddComponent``1(UnityEngine.GameObject)">
+            <summary> Returns component T attached to this object. If there's none, adds one. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.GetComponents``1(System.Collections.Generic.IEnumerable{UnityEngine.GameObject})">
+            <summary> Returns enumerable of all components of type T in all of these GameObjects. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.TryGetComponent``1(UnityEngine.GameObject,``0@)">
+            <summary> Assigns component T to a. Returns whether any component was found. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.Destroy(UnityEngine.GameObject)">
+            <summary> Destroys this object. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.DestroyInstantly(UnityEngine.GameObject)">
+            <summary> Destroys this object instantly. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.Destroy(System.Collections.Generic.IEnumerable{UnityEngine.GameObject})">
+            <summary> Destroys these objects. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.DestroyInstantly(System.Collections.Generic.IEnumerable{UnityEngine.GameObject})">
+            <summary> Destroys these objects instantly. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.SetPhysics(UnityEngine.GameObject,System.Boolean)">
+            <summary> Makes this object react to (or ignore) physics forces. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.SetCollisions(UnityEngine.GameObject,System.Boolean)">
+            <summary> Makes this object collide with (or ignore) other colliders. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.ResetLocalTransform(UnityEngine.GameObject)">
+            <summary> Resets a's local position, rotation and scale. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.SetCollisionsWith(UnityEngine.GameObject,UnityEngine.GameObject,System.Boolean)">
+            <summary> Makes this object collide with (or ignore) object a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.SetCollisionsWith(UnityEngine.GameObject,System.Collections.Generic.IEnumerable{UnityEngine.GameObject},System.Boolean)">
+            <summary> Makes this object collide with (or ignore) objects from aCollection. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.CopyTransformFrom(UnityEngine.GameObject,UnityEngine.GameObject)">
+            <summary> Copies a's transform. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.CopyRigidbodyFrom(UnityEngine.GameObject,UnityEngine.GameObject,System.Boolean)">
+            <summary> Copies a's rigidbody. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.SetCollisionsWith(UnityEngine.GameObject,UnityEngine.Component,System.Boolean)">
+            <summary> Makes this object collide with (or ignore) object a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.SetCollisionsWith(UnityEngine.GameObject,System.Collections.Generic.IEnumerable{UnityEngine.Component},System.Boolean)">
+            <summary> Makes this object collide with (or ignore) objects from aCollection. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.CopyTransformFrom(UnityEngine.GameObject,UnityEngine.Component)">
+            <summary> Copies a's transform. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_GameObject.CopyRigidbodyFrom(UnityEngine.GameObject,UnityEngine.Component,System.Boolean)">
+            <summary> Copies a's rigidbody. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions.StartValue(UnityEngine.AnimationCurve)">
+            <summary> Returns value of the first key in this curve. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions.EndValue(UnityEngine.AnimationCurve)">
+            <summary> Returns value of the last key in this curve. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions.StartTime(UnityEngine.AnimationCurve)">
+            <summary> Returns time of the first key in this curve. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions.EndTime(UnityEngine.AnimationCurve)">
+            <summary> Returns time of the last key in this curve. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions.Duration(UnityEngine.AnimationCurve)">
+            <summary> Returns the duration of this curve. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions.IsValid(UnityEngine.AnimationCurve)">
+            <summary> Tests whether this curve has at least 2 keys. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions.AddLinearKeys(UnityEngine.AnimationCurve,System.ValueTuple{System.Single,System.Single}[])">
+            <summary> Adds keys a to this curve with all tangents and weights set to 0. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions.Pressed(UnityEngine.KeyCode)">
+            <summary> Checks if this key has just been pressed. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions.Released(UnityEngine.KeyCode)">
+            <summary> Checks if this key has just been released. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions.Down(UnityEngine.KeyCode)">
+            <summary> Checks if this key is held down. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions.Up(UnityEngine.KeyCode)">
+            <summary> Checks if this key is resting. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions.SortedByDistanceFrom(UnityEngine.RaycastHit[],UnityEngine.Vector3)">
+            <summary> Returns this array of hits sorted by distance from point a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions.SortedByDistanceFrom(UnityEngine.RaycastHit[],UnityEngine.GameObject)">
+            <summary> Returns this array of hits sorted by distance from object a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions.SortedByDistanceFrom(UnityEngine.RaycastHit[],UnityEngine.Component)">
+            <summary> Returns this array of hits sorted by distance from object a. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.Texture(UnityEngine.Sprite)">
+            <summary> Returns the texture used by this sprite. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.TextureSizePixels(UnityEngine.Sprite)">
+            <summary> Returns this sprite's texture's size in pixels. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.TextureSizeUnits(UnityEngine.Sprite)">
+            <summary> Returns this sprite's texture's size in units. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.SizePixels(UnityEngine.Sprite)">
+            <summary> Returns this sprite's size in pixels. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.SizeUnits(UnityEngine.Sprite)">
+            <summary> Returns this sprite's size in units. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.Size01(UnityEngine.Sprite)">
+            <summary> Returns this sprite's relative size on the texture. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.OffsetPixels(UnityEngine.Sprite)">
+            <summary> Returns this sprite's offset in pixels. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.OffsetUnits(UnityEngine.Sprite)">
+            <summary> Returns this sprite's offset in units. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.Offset01(UnityEngine.Sprite)">
+            <summary> Returns this sprite's relative offset on the texture. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.SizeOffsetPixels(UnityEngine.Sprite)">
+            <summary> Returns this sprite's size and offset in pixels. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.SizeOffsetUnits(UnityEngine.Sprite)">
+            <summary> Returns this sprite's size and offset in units. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.SizeOffset01(UnityEngine.Sprite)">
+            <summary> Returns this sprite's relative size and offset on the texture. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.RectPixels(UnityEngine.Sprite)">
+            <summary> Returns this sprite's rect in pixels. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.PositionToPixelCoords(UnityEngine.Sprite,UnityEngine.Vector3,UnityEngine.Transform)">
+            <summary> Returns coords of a pixel at position a, relative to transform b. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.PositionToPixelColor(UnityEngine.Sprite,UnityEngine.Vector3,UnityEngine.Transform)">
+            <summary> Returns color of a pixel at position a, relative to transform b. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.PositionToPixelAlpha(UnityEngine.Sprite,UnityEngine.Vector3,UnityEngine.Transform)">
+            <summary> Returns alpha of a pixel at position a, relative to transform b. </summary>
+        </member>
+        <member name="M:Vheos.Helpers.UnityObjects.Extensions_Sprite.PixelCoordsToPosition(UnityEngine.Sprite,UnityEngine.Vector2,UnityEngine.Transform)">
+            <summary> Returns position of pixel a, transformed by b. </summary>
+        </member>
+    </members>
+</doc>
