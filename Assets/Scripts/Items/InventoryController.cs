@@ -1,6 +1,8 @@
 ﻿namespace AFSInterview.Items
 {
+	using System;
 	using System.Collections.Generic;
+	using System.Linq;
 	using UnityEngine;
 
 	public class InventoryController : MonoBehaviour
@@ -10,17 +12,18 @@
 
 		public event Action OnItemsChanged = delegate { };
 
-		public void SellAllItemsUpToValue(int maxValue)
+		public void SellAllItemsUpToValue(int maxValueIncl)
 		{
-			for (var i = 0; i < items.Count; i++)
+			Item[] filteredItems = Items.Where(item => item.Value <= maxValueIncl).ToArray();
+			if (filteredItems.Length == 0)
+				return;
+
+			foreach (var item in filteredItems)
 			{
-				var itemValue = items[i].Value;
-				if (itemValue > maxValue)
-					continue;
-				
-				money += itemValue;
-				items.RemoveAt(i);
+				Money += item.Value;
+				Items.Remove(item);
 			}
+			OnItemsChanged();
 		}
 
 		public void AddItem(Item item)
