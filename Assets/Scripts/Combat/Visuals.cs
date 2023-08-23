@@ -1,25 +1,25 @@
 ﻿namespace AFSInterview.Combat
 {
 	using DG.Tweening;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 	using UnityEngine;
 	using Vheos.Helpers.UnityObjects;
 
 	[RequireComponent(typeof(Renderer))]
 	public class UnitVisuals : MonoBehaviour
 	{
+		public Material Material { get; private set; }
+
 		internal void ConnectTo(Unit unit)
 		{
 			this.BecomeChildOf(unit);
-			unit.OnTeamChanged += UpdateColor;
+			Material = GetComponent<Renderer>().material;
+			unit.OnTeamChanged += AnimateColor;
 		}
 
-		private void UpdateColor(Team previous, Team current)
+		private void AnimateColor(Team previous, Team current)
 		{
 			Color color = current != null ? current.Color : Color.white;
-			GetComponent<Renderer>().material.DOColor(color, UnityEngine.Random.Range(0.5f, 2f));
+			Material.DOColor(color, 1f);
 		}
 	}
 }
