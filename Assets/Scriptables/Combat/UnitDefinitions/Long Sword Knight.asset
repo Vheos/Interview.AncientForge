@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd44deffaaa7914199d06562cdece77, type: 3}
+  m_Name: Long Sword Knight
+  m_EditorClassIdentifier: 
+  Attributes: 01000000
+  Health: 12
+  Armor: 2
+  AttackInterval: 3
+  AttackDamage: 2
+  AttackDamageModifiers:
+  - Attribute: 0
+    Damage: -2
+  - Attribute: 1
+    Damage: 2
