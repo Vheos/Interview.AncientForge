@@ -55,7 +55,7 @@ namespace AFSInterview.Combat
 		}
 		public int Cooldown { get; private set; }
 		public UnitDefinition Definition => definition;
-		public string FullName => $"{team.name} {definition.name} ({name})";
+		public string FullName => $"{team.name} {definition.name}";
 		public bool IsAlive => health > 0;
 
 		public int CalculateDamageAgainst(Unit target) => definition.CalculateDamageAgainst(target.definition);

@@ -69,8 +69,12 @@
 			if (item == null || !item.IsUsable)
 				return false;
 
+			Debug.Log($"Using {item.Name}:");
 			foreach (var effect in item.UseEffects)
+			{
+				Debug.Log($"- {effect.Script.name}: {effect.Data}");
 				effect.Invoke(this, item);
+			}
 
 			return true;
 		}

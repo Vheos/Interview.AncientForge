@@ -38,6 +38,14 @@
 			units = teams.SelectMany(team => team.Units).Where(unit => unit.IsAlive).ToList();
 			units.Shuffle();
 			isCombatActive = true;
+
+			Debug.Log($"Combat has started!");
+			Debug.Log($"Teams: {string.Join(", ", teams.Select(team => $"{team.name} (x{team.Units.Count})"))}");
+			Debug.Log($"Turn order:");
+			int order = 0;
+			foreach (Unit unit in units)
+				Debug.Log($"{++order} - {unit.FullName}");
+
 			return true;
 		}
 		private bool StopCombat()
@@ -48,14 +56,17 @@
 			units.Clear();
 			activeUnitID = 0;
 			isCombatActive = false;
+			Debug.Log($"Combat has ended!");
 			return true;
 		}
 		private void AdvanceTurn()
 		{
 			nextTurnTime = Time.time + turnInterval;
 			activeUnitID = activeUnitID.Add(1).Mod(units.Count);
+
 			if (ActiveUnit.TryReduceCooldown())
 			{
+				Debug.Log($"{ActiveUnit.FullName} is preparing ...");
 				ActiveUnit.AnimateCooldown();
 				return;
 			}
@@ -70,8 +81,10 @@
 			target.AnimateTakeDamage(animationStrength);
 
 			target.Health -= damage;
-			CheckForDeath(target);
 			ActiveUnit.ResetCooldown();
+			Debug.Log($"{ActiveUnit.FullName} has attacked {target.FullName} for {damage} damage!");
+
+			CheckForDeath(target);
 		}
 		private void CheckForDeath(Unit target)
 		{
@@ -80,6 +93,8 @@
 
 			target.AnimateDeath(true);
 			RemoveUnit(target);
+			Debug.Log($"{target.FullName} has died!");
+
 			if (!AreEnoughCombatants)
 				StopCombat();
 		}
@@ -88,6 +103,7 @@
 			Unit cachedActiveUnit = ActiveUnit;
 			units.Remove(target);
 			activeUnitID = units.IndexOf(cachedActiveUnit);
+			Debug.Log(activeUnitID);
 		}
 		#endregion
 
