@@ -43,9 +43,20 @@ namespace AFSInterview.Combat
 				OnTeamChanged(previous, team);
 			}
 		}
+		public int Cooldown { get; private set; }
+
 		public UnitDefinition Definition => definition;
 		public bool IsAlive => health > 0;
+		public bool TryReduceCooldown()
+		{
+			if (Cooldown <= 1)
+				return false;
+
+			Cooldown--;
+			return true;
+		}
 		public void ResetHealth() => health = definition.Health;
+		public void ResetCooldown() => Cooldown = definition.Cooldown;
 		public void AnimateLookAt(Unit target)
 			=> transform.DOLookAt(target.transform.position, 0.25f);
 		public void AnimateAttack(float strength)
