@@ -14,21 +14,23 @@
 		[SerializeField] private GameObject itemPrefab = null;
 		[SerializeField] private BoxCollider itemSpawnArea = null;
 		[SerializeField, Range(1f, 10f)] private float itemSpawnInterval = 2.5f;
+		[SerializeField] private KeyCode inputSell = KeyCode.Space;
+		[SerializeField] private KeyCode inputUse = KeyCode.Tab;
 
 		private float nextItemSpawnTime;
-		
+
 		private void Update()
 		{
 			if (Time.time >= nextItemSpawnTime)
 				SpawnNewItem();
-			
+
 			if (Input.GetMouseButtonDown(0))
 				TryPickUpItem();
-			
-			if (Input.GetKeyDown(KeyCode.Space))
+
+			if (Input.GetKeyDown(inputSell))
 				inventoryController.SellAllItemsUpToValue(itemSellMaxValue);
 
-			if (Input.GetKeyDown(KeyCode.Tab))
+			if (Input.GetKeyDown(inputUse))
 				inventoryController.UseFirstUsableItem();
 		}
 
