@@ -102,10 +102,7 @@ namespace AFSInterview.Combat
 			ResetHealth();
 			ResetCooldown();
 		}
-		private void OnDestroy()
-		{
-			team.RemoveUnit(this);
-		}
+		private void OnDestroy() => team.RemoveUnit(this);
 		private void OnDrawGizmos()
 		{
 			Gizmos.color = startingTeam != null ? startingTeam.Color : Color.white;

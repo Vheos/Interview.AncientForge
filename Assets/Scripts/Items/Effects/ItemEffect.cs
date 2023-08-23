@@ -7,8 +7,8 @@ namespace AFSInterview.Items.Effects
 	public struct ItemEffect
 	{
 		#region Serialized
-		[SerializeField] AItemEffectScript script;
-		[SerializeField] string data;
+		[SerializeField] private AItemEffectScript script;
+		[SerializeField] private string data;
 		#endregion
 
 		#region Public
