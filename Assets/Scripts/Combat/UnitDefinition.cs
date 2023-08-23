@@ -23,7 +23,7 @@ namespace AFSInterview.Combat
 		public int Health => health;
 		public int Armor => armor;
 		public IReadOnlyList<UnitAttribute> Attributes => attributes;
-		public int Interval => interval;
+		public int Cooldown => cooldown;
 		public int Damage => damage;
 		public IReadOnlyList<DamageModifier> DamageModifiers => damageModifiers;
 
