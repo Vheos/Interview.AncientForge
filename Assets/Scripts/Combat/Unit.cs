@@ -1,10 +1,10 @@
 namespace AFSInterview.Combat
 {
+	using DG.Tweening;
 	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 	using UnityEngine;
 	using Vheos.Helpers.Math;
+	using Vheos.Helpers.UnityObjects;
 
 	public class Unit : MonoBehaviour
 	{
@@ -14,6 +14,9 @@ namespace AFSInterview.Combat
 
 		private int health;
 		private Team team;
+		private UnitVisuals visuals;
+
+		public event Action<int, int> OnHealthChanged = delegate { };
 		public event Action<Team, Team> OnTeamChanged = delegate { };
 
 		public int Health
@@ -39,14 +42,22 @@ namespace AFSInterview.Combat
 					return;
 
 				Team previous = team;
+				if (previous != null)
+					previous.RemoveUnit(this);
+
 				team = value;
+				if (team != null)
+					team.AddUnit(this);
+
 				OnTeamChanged(previous, team);
 			}
 		}
 		public int Cooldown { get; private set; }
 
 		public UnitDefinition Definition => definition;
+		public string FullName => $"{team.name} {definition.name} ({name})";
 		public bool IsAlive => health > 0;
+		public int CalculateDamageAgainst(Unit target) => definition.CalculateDamageAgainst(target.definition);
 		public bool TryReduceCooldown()
 		{
 			if (Cooldown <= 1)
@@ -75,10 +86,16 @@ namespace AFSInterview.Combat
 
 		private void Awake()
 		{
-			Instantiate(visualsPrefab).ConnectTo(this);
+			visuals = Instantiate(visualsPrefab);
+			visuals.ConnectTo(this);
 			Team = startingTeam;
+			ResetHealth();
+			ResetCooldown();
 		}
-
+		private void OnDestroy()
+		{
+			team.RemoveUnit(this);
+		}
 		private void OnDrawGizmos()
 		{
 			Gizmos.color = startingTeam != null ? startingTeam.Color : Color.white;
