@@ -22,10 +22,10 @@
 		#region Public
 		public Unit ActiveUnit => units[activeUnitID];
 		public bool AreEnoughCombatants => teams.Count(team => team.IsAnyAlive) >= 2;
-		public bool isCombatActive = false;
 		#endregion
 
 		#region Private
+		private bool isCombatActive = false;
 		private List<Unit> units = new();
 		private int activeUnitID = 0;
 		private float nextTurnTime = 0f;
@@ -103,7 +103,6 @@
 			Unit cachedActiveUnit = ActiveUnit;
 			units.Remove(target);
 			activeUnitID = units.IndexOf(cachedActiveUnit);
-			Debug.Log(activeUnitID);
 		}
 		#endregion
 
