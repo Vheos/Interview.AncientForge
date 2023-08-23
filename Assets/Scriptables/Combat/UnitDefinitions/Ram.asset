@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd44deffaaa7914199d06562cdece77, type: 3}
   m_Name: Ram
   m_EditorClassIdentifier: 
-  health: 30
-  armor: 5
+  health: 25
+  armor: 4
   attributes: 0200000001000000
   cooldown: 5
   damage: 3

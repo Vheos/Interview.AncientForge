@@ -15,7 +15,7 @@ MonoBehaviour:
   health: 20
   armor: 3
   attributes: 02000000
-  cooldown: 7
+  cooldown: 8
   damage: 10
   damageModifiers:
   - attribute: 2
