@@ -8,17 +8,18 @@ namespace AFSInterview.Combat
 
 	public class Unit : MonoBehaviour
 	{
+		#region Serialized
 		[SerializeField] private UnitDefinition definition;
 		[SerializeField] private UnitVisuals visualsPrefab;
 		[SerializeField] private Team startingTeam;
+		#endregion
 
-		private int health;
-		private Team team;
-		private UnitVisuals visuals;
-
+		#region Events
 		public event Action<int, int> OnHealthChanged = delegate { };
 		public event Action<Team, Team> OnTeamChanged = delegate { };
+		#endregion
 
+		#region Public
 		public int Health
 		{
 			get => health;
@@ -53,10 +54,10 @@ namespace AFSInterview.Combat
 			}
 		}
 		public int Cooldown { get; private set; }
-
 		public UnitDefinition Definition => definition;
 		public string FullName => $"{team.name} {definition.name} ({name})";
 		public bool IsAlive => health > 0;
+
 		public int CalculateDamageAgainst(Unit target) => definition.CalculateDamageAgainst(target.definition);
 		public bool TryReduceCooldown()
 		{
@@ -83,7 +84,16 @@ namespace AFSInterview.Combat
 			=> transform.DOScale(0f, 2f).OnComplete(() => gameObject.Destroy());
 		public void AnimateCooldown()
 			=> transform.DOPunchScale(Vector3.down / 2f, 1f, 0, 0);
+		#endregion
 
+		#region Private
+		private int health;
+		private Team team;
+		private UnitVisuals visuals;
+		#endregion
+
+
+		#region Mono
 		private void Awake()
 		{
 			visuals = Instantiate(visualsPrefab);
@@ -102,5 +112,6 @@ namespace AFSInterview.Combat
 			Gizmos.DrawWireSphere(transform.position, transform.lossyScale.CompAvg() / 2f);
 			Gizmos.DrawLine(transform.position, transform.position + transform.forward);
 		}
+		#endregion
 	}
 }

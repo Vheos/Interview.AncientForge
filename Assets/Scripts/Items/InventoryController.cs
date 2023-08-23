@@ -9,9 +9,17 @@
 
 	public class InventoryController : MonoBehaviour
 	{
+		#region Serialized
 		[SerializeField] private int money;
 		[SerializeField] private List<Item> items;
+		#endregion
 
+		#region Events
+		public event Action OnMoneyChanged = delegate { };
+		public event Action OnItemsChanged = delegate { };
+		#endregion
+
+		#region Public
 		public int Money
 		{
 			get => money;
@@ -25,9 +33,6 @@
 		}
 		public IReadOnlyList<Item> Items => items;
 
-		public event Action OnMoneyChanged = delegate { };
-		public event Action OnItemsChanged = delegate { };
-
 		public void SellAllItemsUpToValue(int maxValueIncl)
 		{
 			Item[] filteredItems = items.Where(item => item.Value <= maxValueIncl).ToArray();
@@ -39,31 +44,26 @@
 			Money += totalValue;
 			RemoveItems(filteredItems);
 		}
-
 		public void AddItem(Item item)
 		{
 			if (items.TryAddUnique(item))
 				OnItemsChanged();
 		}
-
 		public void AddItems(IEnumerable<Item> items)
 		{
 			if (this.items.TryAddUnique(items))
 				OnItemsChanged();
 		}
-
 		public void RemoveItem(Item item)
 		{
 			if (items.TryRemove(item))
 				OnItemsChanged();
 		}
-
 		public void RemoveItems(IEnumerable<Item> items)
 		{
 			if (this.items.TryRemove(items))
 				OnItemsChanged();
 		}
-
 		public bool UseItem(Item item)
 		{
 			if (item == null || !item.IsUsable)
@@ -74,8 +74,8 @@
 
 			return true;
 		}
-
 		public bool UseFirstUsableItem()
 			=> UseItem(items.FirstOrDefault(item => item.IsUsable));
+		#endregion
 	}
 }

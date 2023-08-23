@@ -11,33 +11,24 @@
 
 	public class CombatManager : MonoBehaviour
 	{
+		#region Serialized
 		[SerializeField] private List<Team> teams;
 		[SerializeField] private bool autoStartCombat = true;
 		[SerializeField] private bool autoAdvanceTurns = true;
 		[SerializeField, Range(0, 2f)] private float turnInterval = 1f;
 		[SerializeField] private KeyCode inputNextTurn = KeyCode.G;
+		#endregion
 
+		#region Public
+		public Unit ActiveUnit => units[activeUnitID];
+		public bool AreEnoughCombatants => teams.Count(team => team.IsAnyAlive) >= 2;
+		public bool isCombatActive = false;
+		#endregion
+
+		#region Private
 		private List<Unit> units = new();
 		private int activeUnitID = 0;
-		private Unit ActiveUnit => units[activeUnitID];
 		private float nextTurnTime = 0f;
-		private bool isCombatActive = false;
-		public bool AreEnoughCombatants => teams.Count(team => team.IsAnyAlive) >= 2;
-
-		private void Start()
-		{
-			if (autoStartCombat)
-				StartCombat();
-		}
-		private void Update()
-		{
-			if (!isCombatActive)
-				return;
-
-			if (Input.GetKeyDown(inputNextTurn)
-			|| autoAdvanceTurns && Time.time > nextTurnTime)
-				AdvanceTurn();
-		}
 
 		private bool StartCombat()
 		{
@@ -82,7 +73,6 @@
 			CheckForDeath(target);
 			ActiveUnit.ResetCooldown();
 		}
-
 		private void CheckForDeath(Unit target)
 		{
 			if (target.IsAlive)
@@ -93,12 +83,30 @@
 			if (!AreEnoughCombatants)
 				StopCombat();
 		}
-
 		private void RemoveUnit(Unit target)
 		{
 			Unit cachedActiveUnit = ActiveUnit;
 			units.Remove(target);
 			activeUnitID = units.IndexOf(cachedActiveUnit);
 		}
+		#endregion
+
+		#region Mono
+		private void Start()
+		{
+			if (autoStartCombat)
+				StartCombat();
+		}
+		private void Update()
+		{
+			if (!isCombatActive)
+				return;
+
+			if (Input.GetKeyDown(inputNextTurn)
+			|| autoAdvanceTurns && Time.time > nextTurnTime)
+				AdvanceTurn();
+		}
+		#endregion
+
 	}
 }

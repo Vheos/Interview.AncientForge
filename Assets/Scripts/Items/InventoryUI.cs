@@ -8,19 +8,12 @@ namespace AFSInterview
 	[RequireComponent(typeof(TMP_Text))]
 	public class InventoryUI : MonoBehaviour
 	{
+		#region Serialized
 		[SerializeField] private InventoryController inventory;
 		[SerializeField] private string currency;
+		#endregion
 
-		private void Awake()
-		{
-			if (inventory != null)
-			{
-				inventory.OnMoneyChanged += UpdateText;
-				inventory.OnItemsChanged += UpdateText;
-				UpdateText();
-			}
-		}
-
+		#region Private
 		private void UpdateText()
 		{
 			StringBuilder sb = new();
@@ -32,5 +25,18 @@ namespace AFSInterview
 
 			GetComponent<TMP_Text>().text = sb.ToString();
 		}
+		#endregion
+
+		#region Mono
+		private void Awake()
+		{
+			if (inventory == null)
+				return;
+
+			inventory.OnMoneyChanged += UpdateText;
+			inventory.OnItemsChanged += UpdateText;
+			UpdateText();
+		}
+		#endregion
 	}
 }

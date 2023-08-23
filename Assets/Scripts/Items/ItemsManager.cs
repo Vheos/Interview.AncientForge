@@ -5,6 +5,7 @@
 
 	public class ItemsManager : MonoBehaviour
 	{
+		#region Serialized
 		[SerializeField] private InventoryController inventoryController = null;
 		[SerializeField] private int itemSellMaxValue = 150;
 		[SerializeField] private Transform itemSpawnParent = null;
@@ -13,23 +14,10 @@
 		[SerializeField, Range(1f, 10f)] private float itemSpawnInterval = 2.5f;
 		[SerializeField] private KeyCode inputSell = KeyCode.Space;
 		[SerializeField] private KeyCode inputUse = KeyCode.Tab;
+		#endregion
 
+		#region Private
 		private float nextItemSpawnTime;
-
-		private void Update()
-		{
-			if (Time.time >= nextItemSpawnTime)
-				SpawnNewItem();
-
-			if (Input.GetMouseButtonDown(0))
-				TryPickUpItem();
-
-			if (Input.GetKeyDown(inputSell))
-				inventoryController.SellAllItemsUpToValue(itemSellMaxValue);
-
-			if (Input.GetKeyDown(inputUse))
-				inventoryController.UseFirstUsableItem();
-		}
 
 		private void SpawnNewItem()
 		{
@@ -44,7 +32,6 @@
 
 			Instantiate(itemPrefab, position, Quaternion.identity, itemSpawnParent);
 		}
-
 		private bool TryPickUpItem()
 		{
 			var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -57,5 +44,23 @@
 			Debug.Log("Picked up " + item.Name + " with value of " + item.Value + " and now have " + inventoryController.Items.Count + " items");
 			return true;
 		}
+		#endregion
+
+		#region Mono
+		private void Update()
+		{
+			if (Time.time >= nextItemSpawnTime)
+				SpawnNewItem();
+
+			if (Input.GetMouseButtonDown(0))
+				TryPickUpItem();
+
+			if (Input.GetKeyDown(inputSell))
+				inventoryController.SellAllItemsUpToValue(itemSellMaxValue);
+
+			if (Input.GetKeyDown(inputUse))
+				inventoryController.UseFirstUsableItem();
+		}
+		#endregion
 	}
 }

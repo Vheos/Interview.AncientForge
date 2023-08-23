@@ -6,9 +6,12 @@ namespace AFSInterview.Items.Effects
 	[Serializable]
 	public struct ItemEffect
 	{
+		#region Serialized
 		[SerializeField] AItemEffectScript script;
 		[SerializeField] string data;
+		#endregion
 
+		#region Public
 		public AItemEffectScript Script => script;
 		public string Data => data;
 
@@ -17,5 +20,6 @@ namespace AFSInterview.Items.Effects
 			if (script != null)
 				script.Invoke(inventory, item, data.Split(';'));
 		}
+		#endregion
 	}
 }
