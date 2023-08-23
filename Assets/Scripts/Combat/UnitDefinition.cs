@@ -25,5 +25,18 @@ namespace AFSInterview.Combat
 		public int Interval => interval;
 		public int Damage => damage;
 		public IReadOnlyList<DamageModifier> DamageModifiers => damageModifiers;
+
+		public bool HasAttribute(UnitAttribute attribute)
+			=> attributes.Contains(attribute);
+		public int CalculateDamageAgainst(UnitDefinition target)
+		{
+			int totalDamage = damage;
+			foreach (var modifier in damageModifiers)
+				if (target.HasAttribute(modifier.Attribute))
+					totalDamage += modifier.Damage;
+			totalDamage -= target.armor;
+
+			return totalDamage.ClampMin(1);
+		}
 	}
 }
