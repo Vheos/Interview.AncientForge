@@ -12,11 +12,24 @@ namespace AFSInterview.Combat
 		[SerializeField] private UnitVisuals visualsPrefab;
 		[SerializeField] private Team startingTeam;
 
+		private int health;
+		private Team team;
 		public event Action<Team, Team> OnTeamChanged = delegate { };
 
-		public UnitDefinition Definition => definition;
+		public int Health
+		{
+			get => health;
+			set
+			{
+				if (value == health)
+					return;
 
-		private Team team;
+				int previous = health;
+				health = value.Clamp(0, definition.Health);
+				if (health != previous)
+					OnHealthChanged(previous, health);
+			}
+		}
 		public Team Team
 		{
 			get => team;
@@ -30,6 +43,9 @@ namespace AFSInterview.Combat
 				OnTeamChanged(previous, team);
 			}
 		}
+		public UnitDefinition Definition => definition;
+		public bool IsAlive => health > 0;
+		public void ResetHealth() => health = definition.Health;
 		public void AnimateLookAt(Unit target)
 			=> transform.DOLookAt(target.transform.position, 0.25f);
 		public void AnimateAttack(float strength)
