@@ -1,16 +1,13 @@
 ﻿namespace AFSInterview.Assets.Scripts.Combat
 {
 	using AFSInterview.Combat;
-	using DG.Tweening;
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-	using System.Threading.Tasks;
 	using UnityEngine;
 	using Vheos.Helpers.Collections;
 	using Vheos.Helpers.Math;
 	using Vheos.Helpers.RNG;
-	using static UnityEngine.GraphicsBuffer;
 
 	public class CombatManager : MonoBehaviour
 	{
@@ -78,12 +75,12 @@
 			float animationStrength = damage / 10f;
 			ActiveUnit.AnimateLookAt(target);
 			ActiveUnit.AnimateAttack(animationStrength);
-			target.AnimateLookAt(ActiveUnit);			
+			target.AnimateLookAt(ActiveUnit);
 			target.AnimateTakeDamage(animationStrength);
 
 			target.Health -= damage;
 			CheckForDeath(target);
-			ActiveUnit.ResetCooldown();		
+			ActiveUnit.ResetCooldown();
 		}
 
 		private void CheckForDeath(Unit target)

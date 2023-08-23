@@ -1,8 +1,5 @@
 ﻿namespace AFSInterview.Items
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
 	using UnityEngine;
 	using Random = UnityEngine.Random;
 
@@ -37,14 +34,14 @@
 		private void SpawnNewItem()
 		{
 			nextItemSpawnTime = Time.time + itemSpawnInterval;
-			
+
 			var spawnAreaBounds = itemSpawnArea.bounds;
 			var position = new Vector3(
 				Random.Range(spawnAreaBounds.min.x, spawnAreaBounds.max.x),
 				0f,
 				Random.Range(spawnAreaBounds.min.z, spawnAreaBounds.max.z)
 			);
-			
+
 			Instantiate(itemPrefab, position, Quaternion.identity, itemSpawnParent);
 		}
 
@@ -54,11 +51,11 @@
 			var layerMask = LayerMask.GetMask("Item");
 			if (!Physics.Raycast(ray, out var hit, 100f, layerMask) || !hit.collider.TryGetComponent<IItemHolder>(out var itemHolder))
 				return false;
-			
+
 			var item = itemHolder.GetItem(true);
-            inventoryController.AddItem(item);			
-            Debug.Log("Picked up " + item.Name + " with value of " + item.Value + " and now have " + inventoryController.Items.Count + " items");
-            return true;
-        }
+			inventoryController.AddItem(item);
+			Debug.Log("Picked up " + item.Name + " with value of " + item.Value + " and now have " + inventoryController.Items.Count + " items");
+			return true;
+		}
 	}
 }

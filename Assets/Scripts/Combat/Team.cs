@@ -3,7 +3,6 @@ namespace AFSInterview.Combat
 	using System.Collections.Generic;
 	using System.Linq;
 	using UnityEngine;
-	using Vheos.Helpers.Collections;
 
 	[CreateAssetMenu(fileName = nameof(Team), menuName = ASSET_MENU_PATH + nameof(Team))]
 	public class Team : ScriptableObject
