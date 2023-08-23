@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd44deffaaa7914199d06562cdece77, type: 3}
   m_Name: Catapult
   m_EditorClassIdentifier: 
-  Attributes: 02000000
-  Health: 20
-  Armor: 0
-  AttackInterval: 6
-  AttackDamage: 9
-  AttackDamageModifiers: []
+  health: 20
+  armor: 3
+  attributes: 02000000
+  cooldown: 7
+  damage: 10
+  damageModifiers:
+  - attribute: 2
+    damage: 5

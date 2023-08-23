@@ -12,13 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd44deffaaa7914199d06562cdece77, type: 3}
   m_Name: Long Sword Knight
   m_EditorClassIdentifier: 
-  Attributes: 01000000
-  Health: 12
-  Armor: 2
-  AttackInterval: 3
-  AttackDamage: 2
-  AttackDamageModifiers:
-  - Attribute: 0
-    Damage: -2
-  - Attribute: 1
-    Damage: 2
+  health: 15
+  armor: 2
+  attributes: 01000000
+  cooldown: 2
+  damage: 3
+  damageModifiers: []

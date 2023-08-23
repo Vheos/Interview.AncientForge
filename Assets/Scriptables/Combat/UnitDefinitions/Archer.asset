@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd44deffaaa7914199d06562cdece77, type: 3}
   m_Name: Archer
   m_EditorClassIdentifier: 
-  Attributes: 
-  Health: 10
-  Armor: 1
-  AttackInterval: 1
-  AttackDamage: 1
-  AttackDamageModifiers: []
+  health: 12
+  armor: 1
+  attributes: 
+  cooldown: 1
+  damage: 2
+  damageModifiers:
+  - attribute: 0
+    damage: 1

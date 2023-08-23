@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd44deffaaa7914199d06562cdece77, type: 3}
   m_Name: Ram
   m_EditorClassIdentifier: 
-  Attributes: 0200000001000000
-  Health: 20
-  Armor: 0
-  AttackInterval: 6
-  AttackDamage: 2
-  AttackDamageModifiers: []
+  health: 30
+  armor: 5
+  attributes: 0200000001000000
+  cooldown: 5
+  damage: 3
+  damageModifiers:
+  - attribute: 1
+    damage: 2
+  - attribute: 0
+    damage: -2
