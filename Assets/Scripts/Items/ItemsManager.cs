@@ -8,12 +8,12 @@
 
 	public class ItemsManager : MonoBehaviour
 	{
-		[SerializeField] private InventoryController inventoryController;
-		[SerializeField] private int itemSellMaxValue;
-		[SerializeField] private Transform itemSpawnParent;
-		[SerializeField] private GameObject itemPrefab;
-		[SerializeField] private BoxCollider itemSpawnArea;
-		[SerializeField] private float itemSpawnInterval;
+		[SerializeField] private InventoryController inventoryController = null;
+		[SerializeField] private int itemSellMaxValue = 150;
+		[SerializeField] private Transform itemSpawnParent = null;
+		[SerializeField] private GameObject itemPrefab = null;
+		[SerializeField] private BoxCollider itemSpawnArea = null;
+		[SerializeField, Range(1f, 10f)] private float itemSpawnInterval = 2.5f;
 
 		private float nextItemSpawnTime;
 		
