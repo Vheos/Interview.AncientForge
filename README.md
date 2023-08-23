@@ -93,5 +93,34 @@ _2x Long Sword Knight, 1x Druid, 1x Ram_ **VERSUS** _3x Archer, 1x Catapult, 1x 
   - [x] The fight turn order should be determined randomly at the start of the fight and kept for its whole duration. Assume that all of the units are always within the required range to attack any enemy unit. Make sure that editing all of the balance-related values is designer-friendly. Providing an animated visual representation of the fight will be considered a plus.
   > I went the extra mile and made simple animations with DOTween ;)
 
-# Good luck!
-> Thank you and likewise <3
+# How to:
+
+![image](https://github.com/Vheos/Interview.AncientForge/assets/9155825/ddf618bd-dcd1-4644-8bf3-00b3ca021a00)
+
+## **Create a usable item**:
+- add component `ItemPresenter`
+- expand the `Item` class property
+- expand the `UseEffects` list property
+- add an element to the list for each effect you want to trigger
+  - Script - ScriptableObject that defines what actually happens: `AddMoney`, `AddItem` or `RemoveSelf`
+  - Data - string with semicolon-separated values
+ 
+## **Create a new item effect**:
+- duplicate and modify any ScriptableObject in `Assets/Scriptables/Items/Effects`
+
+![image](https://github.com/Vheos/Interview.AncientForge/assets/9155825/7ed07d23-3fa2-4f5b-89de-a3cc5b91be54)
+- notes:
+  - if you don't include the `RemoveSelf` effect, the item will won't be consumed upon use
+  - I didn't implement detailed error checking for the string-parsed data, nor any tooltip as to what data is expect by each script
+ 
+## **Rebalance units**
+- all units' base stats are defined in the ScriptableObjects in `Assets/Scriptables/Combat/UnitDefinitions`
+
+![image](https://github.com/Vheos/Interview.AncientForge/assets/9155825/e555f758-1906-4457-b8f8-437b5c39aec9)
+
+## **Create a new unit**:
+- duplicate and modify any ScriptableObject in `Assets/Scriptables/Combat/UnitDefinitions`
+- (optional) duplicate and modify any Prefab in `Assets/Prefabs/UnitVisuals`
+
+## **Change controls**
+- each manager exposes a `KeyCode` for their input-related actions
