@@ -7,7 +7,7 @@ namespace AFSInterview.Items.Effects
 
 	public abstract class AItemEffectScript : ScriptableObject
 	{
-		public const string ASSET_MENU_PATH = "Items/Effects/";
+		public const string ASSET_MENU_PATH = nameof(Items) + "/" + nameof(Effects) + "/";	
 
 		public abstract void Invoke(InventoryController inventory, Item item, string[] values);
 	}
