@@ -10,7 +10,10 @@ namespace AFSInterview.Combat
 	{
 		public const string ASSET_MENU_PATH = nameof(Combat) + "/";
 
-		public Color Color;
-		public UnitDefinition[] Units;
+		[SerializeField] private Color color = Color.white;
+		private readonly HashSet<Unit> units = new();
+
+		public Color Color => color;
+		public IReadOnlyCollection<Unit> Units => units;
 	}
 }
