@@ -104,14 +104,13 @@ _2x Long Sword Knight, 1x Druid, 1x Ram_ **VERSUS** _3x Archer, 1x Catapult, 1x 
   - Data - string with semicolon-separated values
  
 ![image](https://github.com/Vheos/Interview.AncientForge/assets/9155825/7ed07d23-3fa2-4f5b-89de-a3cc5b91be54)
-
-## **Create a new item effect**:
-- duplicate and modify any ScriptableObject in `Assets/Scriptables/Items/Effects`
-
 - notes:
-  - if you don't include the `RemoveSelf` effect, the item will won't be consumed upon use
-  - I didn't implement detailed error checking for the string-parsed data, nor any tooltip as to what data is expect by each script
+  - if you don't include the `RemoveSelf` effect, the item won't be consumed upon use
+  - I didn't implement detailed error checking for the string-parsed data, nor any tooltips as to what data is expected by each script
  
+## **Create a new item effect**:
+- duplicate any ScriptableObject in `Assets/Scriptables/Items/Effects` and modify its C# script to your needs
+
 ## **Rebalance units**
 - all units' base stats are defined in the ScriptableObjects in `Assets/Scriptables/Combat/UnitDefinitions`
 
