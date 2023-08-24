@@ -95,8 +95,6 @@ _2x Long Sword Knight, 1x Druid, 1x Ram_ **VERSUS** _3x Archer, 1x Catapult, 1x 
 
 # How to:
 
-![image](https://github.com/Vheos/Interview.AncientForge/assets/9155825/ddf618bd-dcd1-4644-8bf3-00b3ca021a00)
-
 ## **Create a usable item**:
 - add component `ItemPresenter`
 - expand the `Item` class property
@@ -105,10 +103,11 @@ _2x Long Sword Knight, 1x Druid, 1x Ram_ **VERSUS** _3x Archer, 1x Catapult, 1x 
   - Script - ScriptableObject that defines what actually happens: `AddMoney`, `AddItem` or `RemoveSelf`
   - Data - string with semicolon-separated values
  
+![image](https://github.com/Vheos/Interview.AncientForge/assets/9155825/7ed07d23-3fa2-4f5b-89de-a3cc5b91be54)
+
 ## **Create a new item effect**:
 - duplicate and modify any ScriptableObject in `Assets/Scriptables/Items/Effects`
 
-![image](https://github.com/Vheos/Interview.AncientForge/assets/9155825/7ed07d23-3fa2-4f5b-89de-a3cc5b91be54)
 - notes:
   - if you don't include the `RemoveSelf` effect, the item will won't be consumed upon use
   - I didn't implement detailed error checking for the string-parsed data, nor any tooltip as to what data is expect by each script
@@ -124,3 +123,5 @@ _2x Long Sword Knight, 1x Druid, 1x Ram_ **VERSUS** _3x Archer, 1x Catapult, 1x 
 
 ## **Change controls**
 - each manager exposes a `KeyCode` for their input-related actions
+
+![image](https://github.com/Vheos/Interview.AncientForge/assets/9155825/ddf618bd-dcd1-4644-8bf3-00b3ca021a00)
